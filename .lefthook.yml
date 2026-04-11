@@ -1,7 +1,7 @@
 pre-commit:
   commands:
     biome:
-      glob: "*.{ts,tsx,js,jsx,json}"
+      glob: "*.{ts,tsx,js,jsx,json,css}"
       run: npx biome check --write {staged_files}
       stage_fixed: true
     type-check:

@@ -27,7 +27,15 @@
     "lineWidth": 100
   },
   "files": {
-    "includes": ["**", "!node_modules", "!.next", "!.docs", "!public", "!sanity/node_modules"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!.docs",
+      "!public",
+      "!sanity/node_modules",
+      "!sanity/.sanity"
+    ]
   },
   "css": {
     "parser": {

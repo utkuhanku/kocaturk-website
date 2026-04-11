@@ -71,7 +71,7 @@
 }
 
 .eyebrow::before {
-  content: '';
+  content: "";
   display: block;
   width: var(--eyebrow-line-width);
   height: var(--eyebrow-line-thickness);
@@ -112,7 +112,7 @@
 }
 
 .tba::before {
-  content: '';
+  content: "";
   display: block;
   width: var(--tba-dot-size);
   height: var(--tba-dot-size);
@@ -242,11 +242,21 @@
 }
 
 /* Stagger delay yardımcıları */
-.reveal-d1 { transition-delay: var(--stagger-1); }
-.reveal-d2 { transition-delay: var(--stagger-2); }
-.reveal-d3 { transition-delay: var(--stagger-3); }
-.reveal-d4 { transition-delay: var(--stagger-4); }
-.reveal-d5 { transition-delay: var(--stagger-5); }
+.reveal-d1 {
+  transition-delay: var(--stagger-1);
+}
+.reveal-d2 {
+  transition-delay: var(--stagger-2);
+}
+.reveal-d3 {
+  transition-delay: var(--stagger-3);
+}
+.reveal-d4 {
+  transition-delay: var(--stagger-4);
+}
+.reveal-d5 {
+  transition-delay: var(--stagger-5);
+}
 
 /* =========================================================
    6. HERO TITLE — Kelime kelime stagger reveal
@@ -298,7 +308,7 @@
 
 /* Sağ üst turuncu glow */
 .dark-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: var(--glow-offset-x);
@@ -315,7 +325,7 @@
 
 /* Sol alt şeftali glow */
 .dark-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: var(--glow-offset-b);
   left: var(--glow-offset-x);
