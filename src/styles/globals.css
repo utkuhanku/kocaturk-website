@@ -1,0 +1,195 @@
+/**
+ * globals.css — Kocatürk Okulları
+ *
+ * Katmanlar (bu sırayla):
+ *   1. @import "tailwindcss"    — Tailwind v4 base, components, utilities
+ *   2. @import "./tokens.css"   — DS CSS variable tanımları (:root)
+ *   3. @theme inline { ... }    — tokens.css değerlerini Tailwind utility'lerine map
+ *   4. Reset + base             — minimal browser normalization
+ *   5. Reduced motion           — animasyon erişilebilirlik override
+ *
+ * KURAL: Component class'ları (eyebrow, tba, reveal, wrap vs.) bu dosyaya girmez.
+ * Onlar src/styles/utilities.css'tedir.
+ *
+ * @see .docs/02-DESIGN-SYSTEM.md
+ */
+
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./utilities.css";
+
+/* =========================================================
+   @THEME INLINE — DS token'larını Tailwind utility'lerine map et
+   "inline" → utility'ler değeri içine gömmez, var() referansı kullanır
+   ========================================================= */
+
+@theme inline {
+  /* --- Renkler --- */
+  --color-bg:                    var(--color-bg);
+  --color-surface:               var(--color-surface);
+  --color-surface-2:             var(--color-surface-2);
+
+  --color-ink:                   var(--color-ink);
+  --color-ink-2:                 var(--color-ink-2);
+  --color-ink-mute:              var(--color-ink-mute);
+  --color-ink-soft:              var(--color-ink-soft);
+  --color-line:                  var(--color-line);
+  --color-line-strong:           var(--color-line-strong);
+
+  --color-anthracite:            var(--color-anthracite);
+  --color-anthracite-deep:       var(--color-anthracite-deep);
+  --color-anthracite-soft:       var(--color-anthracite-soft);
+  --color-anthracite-line:       var(--color-anthracite-line);
+  --color-anthracite-line-soft:  var(--color-anthracite-line-soft);
+
+  --color-orange:                var(--color-orange);
+  --color-orange-bright:         var(--color-orange-bright);
+  --color-orange-deep:           var(--color-orange-deep);
+  --color-peach:                 var(--color-peach);
+  --color-peach-soft:            var(--color-peach-soft);
+
+  --color-success:               var(--color-success);
+  --color-warning:               var(--color-warning);
+  --color-error:                 var(--color-error);
+
+  /* --- Font aileleri --- */
+  --font-display:   var(--font-display);
+  --font-body:      var(--font-body);
+
+  /* --- Spacing → Tailwind --spacing-* adlandırmasına map --- */
+  --spacing-1:  var(--space-1);   /*   4px */
+  --spacing-2:  var(--space-2);   /*   8px */
+  --spacing-3:  var(--space-3);   /*  12px */
+  --spacing-4:  var(--space-4);   /*  16px */
+  --spacing-5:  var(--space-5);   /*  20px */
+  --spacing-6:  var(--space-6);   /*  24px */
+  --spacing-8:  var(--space-8);   /*  32px */
+  --spacing-10: var(--space-10);  /*  40px */
+  --spacing-12: var(--space-12);  /*  48px */
+  --spacing-14: var(--space-14);  /*  56px */
+  --spacing-16: var(--space-16);  /*  64px */
+  --spacing-20: var(--space-20);  /*  80px */
+  --spacing-24: var(--space-24);  /*  96px */
+  --spacing-32: var(--space-32);  /* 128px */
+  --spacing-40: var(--space-40);  /* 160px */
+  --spacing-48: var(--space-48);  /* 192px */
+
+  /* --- Border radius → Tailwind --radius-* --- */
+  --radius-none: var(--radius-none);
+  --radius-sm:   var(--radius-sm);
+  --radius-md:   var(--radius-md);
+  --radius-lg:   var(--radius-lg);
+  --radius-xl:   var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+  --radius-full: var(--radius-full);
+
+  /* --- Shadows → Tailwind --shadow-* --- */
+  --shadow-xs:          var(--shadow-xs);
+  --shadow-sm:          var(--shadow-sm);
+  --shadow-md:          var(--shadow-md);
+  --shadow-lg:          var(--shadow-lg);
+  --shadow-xl:          var(--shadow-xl);
+  --shadow-2xl:         var(--shadow-2xl);
+  --shadow-orange:      var(--shadow-orange);
+  --shadow-orange-soft: var(--shadow-orange-soft);
+}
+
+/* =========================================================
+   RESET + BASE
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Sayfa render'da font flash'ını önle */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);        /* 16px default */
+  line-height: 1.65;
+  min-height: 100dvh;
+}
+
+/* Medya varsayılanları */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elemanları font miras almalı */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Paragraf ötelenmesi yok */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Link default görünümü — component'e bırakılır */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Listelerde stil yok — component'e bırakılır */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Focus — WCAG AA zorunluluğu, asla outline: 0 yapma */
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Metin seçimi marka rengiyle */
+::selection {
+  background-color: var(--color-peach-soft);
+  color: var(--color-ink);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   .docs/02-DESIGN-SYSTEM.md Bölüm 6 — Yasak Animasyonlar
+   .docs/09-RULES-AND-GUARDRAILS.md Bölüm 7
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

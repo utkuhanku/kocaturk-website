@@ -8,7 +8,7 @@
 
 | Katman | Karar | Versiyon |
 |---|---|---|
-| **Framework** | Next.js (App Router) | 15.x latest |
+| **Framework** | Next.js (App Router) | 16.x latest |
 | **Dil** | TypeScript | 5.x strict mode |
 | **Styling** | Tailwind CSS + CSS Variables | 4.x |
 | **CMS** | Sanity (headless) | latest |

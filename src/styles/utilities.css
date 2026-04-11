@@ -1,0 +1,331 @@
+/**
+ * utilities.css — Kocatürk Okulları
+ *
+ * Global yardımcı sınıflar. Tüm değerler tokens.css'den gelir.
+ * Bu dosyada hiçbir hardcoded renk, px, ms veya font değeri olamaz.
+ *
+ * İçerik:
+ *   1. .wrap — Container utility
+ *   2. .eyebrow — Section label
+ *   3. .tba — Inline placeholder badge
+ *   4. .photo-slot — Görsel yer tutucu
+ *   5. .reveal — Scroll reveal animation
+ *   6. .hero-title — Hero başlık stagger
+ *   7. .dark-section — Dark bg + atmosphere glow
+ *
+ * @see .docs/02-DESIGN-SYSTEM.md Bölüm 3, 6, 7, 8, 12, 15
+ */
+
+/* =========================================================
+   1. WRAP — Container
+   .docs/02-DESIGN-SYSTEM.md Bölüm 3
+   ========================================================= */
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.wrap.narrow {
+  max-width: var(--container-narrow);
+}
+
+.wrap.wide {
+  max-width: var(--container-wide);
+}
+
+/* 700–1100px: orta padding
+   Not: CSS custom property'ler @media içinde çalışmaz.
+   Bu değerler tokens.css Bölüm 8'deki --bp-md (768px) ve --bp-lg (1024px) arasında,
+   container davranışı için DS Bölüm 3 + 14'ten türetilmiştir.
+   Eşdeğer tokenlar: --container-padding-md (32px), --container-padding-sm (20px) */
+@media (max-width: 1100px) {
+  .wrap {
+    padding: 0 var(--container-padding-md);
+  }
+}
+
+/* < 700px: mobil padding — tokens.css --bp-sm (640px) altındaki mobil eşiği */
+@media (max-width: 700px) {
+  .wrap {
+    padding: 0 var(--container-padding-sm);
+  }
+}
+
+/* =========================================================
+   2. EYEBROW — Section label
+   .docs/02-DESIGN-SYSTEM.md Bölüm 12
+   ========================================================= */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-eyebrow);
+  color: var(--color-orange);
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: var(--eyebrow-line-width);
+  height: var(--eyebrow-line-thickness);
+  background: var(--color-orange);
+  flex-shrink: 0;
+}
+
+/* Dark bg üzerinde */
+.eyebrow.light {
+  color: var(--color-peach);
+}
+
+.eyebrow.light::before {
+  background: var(--color-peach);
+}
+
+/* =========================================================
+   3. TBA — İnline placeholder badge
+   .docs/02-DESIGN-SYSTEM.md Bölüm 8
+   ========================================================= */
+
+.tba {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--tba-font-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tba);
+  color: var(--color-orange);
+  background: var(--color-peach-soft);
+  border: var(--border-thin) dashed var(--color-orange);
+  padding: var(--tba-padding-y) var(--tba-padding-x);
+  vertical-align: middle;
+  margin-left: var(--tba-margin-left);
+  border-radius: var(--tba-border-radius);
+}
+
+.tba::before {
+  content: '';
+  display: block;
+  width: var(--tba-dot-size);
+  height: var(--tba-dot-size);
+  border-radius: var(--radius-full);
+  background: var(--color-orange);
+  flex-shrink: 0;
+}
+
+/* Dark bg üzerinde */
+.tba.dark {
+  color: var(--color-peach);
+  background: rgb(from var(--color-orange) r g b / var(--glow-tba-opacity));
+  border-color: var(--color-peach);
+}
+
+.tba.dark::before {
+  background: var(--color-peach);
+}
+
+/* =========================================================
+   4. PHOTO SLOT — Görsel yer tutucu
+   .docs/02-DESIGN-SYSTEM.md Bölüm 7
+   ========================================================= */
+
+.photo-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+  background: var(--color-anthracite);
+  border: var(--border-thin) dashed var(--color-peach-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-align: center;
+}
+
+.photo-slot-meta {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-peach);
+  opacity: 0.7;
+}
+
+.photo-slot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-12) var(--space-8);
+}
+
+.photo-slot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--photo-slot-icon-size);
+  height: var(--photo-slot-icon-size);
+  color: var(--color-peach-soft);
+  font-size: var(--photo-slot-icon-font-size);
+  opacity: 0.6;
+}
+
+.photo-slot-title {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-peach);
+  line-height: 1.4;
+}
+
+.photo-slot-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+}
+
+/* Light bg üzerinde */
+.photo-slot.light {
+  background: var(--color-surface-2);
+  border-color: var(--color-orange);
+}
+
+.photo-slot.light .photo-slot-meta {
+  color: var(--color-orange);
+}
+
+.photo-slot.light .photo-slot-icon {
+  color: var(--color-orange);
+}
+
+.photo-slot.light .photo-slot-title {
+  color: var(--color-ink-2);
+}
+
+/* =========================================================
+   5. REVEAL — Scroll reveal animation
+   .docs/02-DESIGN-SYSTEM.md Bölüm 6
+   IntersectionObserver ile tetiklenir (threshold: 0.12)
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-translate-y));
+  transition:
+    opacity var(--dur-slowest) var(--ease-out),
+    transform var(--dur-slowest) var(--ease-out);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delay yardımcıları */
+.reveal-d1 { transition-delay: var(--stagger-1); }
+.reveal-d2 { transition-delay: var(--stagger-2); }
+.reveal-d3 { transition-delay: var(--stagger-3); }
+.reveal-d4 { transition-delay: var(--stagger-4); }
+.reveal-d5 { transition-delay: var(--stagger-5); }
+
+/* =========================================================
+   6. HERO TITLE — Kelime kelime stagger reveal
+   .docs/02-DESIGN-SYSTEM.md Bölüm 6
+   ========================================================= */
+
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title .line span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform var(--dur-hero-title) var(--ease-out);
+}
+
+.hero-title.is-in .line span {
+  transform: none;
+}
+
+/* nth-child stagger: --dur-instant (100ms), --dur-fast (200ms) */
+.hero-title .line:nth-child(2) span {
+  transition-delay: var(--dur-instant);
+}
+
+.hero-title .line:nth-child(3) span {
+  transition-delay: var(--dur-fast);
+}
+
+/* Em vurgusu — italik yasak, turuncu renk kullanılır */
+.hero-title em {
+  font-style: normal;
+  color: var(--color-orange);
+  font-weight: 600;
+}
+
+/* =========================================================
+   7. DARK SECTION — Antrasit zemin + atmosfer glow
+   .docs/02-DESIGN-SYSTEM.md Bölüm 15
+   Sadece dark hero ve dark feature section'lar için.
+   ========================================================= */
+
+.dark-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-anthracite);
+}
+
+/* Sağ üst turuncu glow */
+.dark-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: var(--glow-offset-x);
+  width: var(--glow-size-lg);
+  height: var(--glow-size-lg);
+  background: radial-gradient(
+    circle,
+    rgb(from var(--color-orange) r g b / var(--glow-orange-opacity)) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sol alt şeftali glow */
+.dark-section::after {
+  content: '';
+  position: absolute;
+  bottom: var(--glow-offset-b);
+  left: var(--glow-offset-x);
+  width: var(--glow-size-md);
+  height: var(--glow-size-md);
+  background: radial-gradient(
+    circle,
+    rgb(from var(--color-peach) r g b / var(--glow-peach-opacity)) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}

@@ -1,0 +1,249 @@
+/**
+ * Design System Tokens — Kocatürk Okulları
+ *
+ * @see .docs/02-DESIGN-SYSTEM.md
+ *
+ * KURAL: Bu dosyada tanımlanmamış hiçbir renk, font, boyut, ease,
+ * gölge veya animasyon değeri başka bir dosyada kullanılamaz.
+ * Yeni token gerekiyorsa önce bu dosya güncellenir.
+ */
+
+:root {
+  /* =========================================================
+     1. RENK PALETİ
+     .docs/02-DESIGN-SYSTEM.md Bölüm 1
+     ========================================================= */
+
+  /* — Light surfaces — */
+  --color-bg: #fafaf8;           /* sayfa zemini, sıcak off-white */
+  --color-surface: #ffffff;      /* kart, panel zeminleri */
+  --color-surface-2: #f4f4f1;    /* alt seviye yüzeyler */
+
+  /* — Ink (text colors) — */
+  --color-ink: #16181d;          /* ana metin, başlıklar */
+  --color-ink-2: #2a2d35;        /* alt metin */
+  --color-ink-mute: #6b7280;     /* yardımcı metin */
+  --color-ink-soft: #9ca3af;     /* placeholder, footer text */
+  --color-line: #e5e5e0;         /* ince ayraç çizgiler */
+  --color-line-strong: #d1d1cc;  /* belirgin ayraç çizgiler */
+
+  /* — Antrasit (dark sections) — */
+  --color-anthracite: #1f2228;         /* ana koyu zemin */
+  --color-anthracite-deep: #16181d;    /* derinlik */
+  --color-anthracite-soft: #2a2d35;    /* alt katman */
+  --color-anthracite-line: #34373f;    /* dark zemindeki çizgiler */
+  --color-anthracite-line-soft: #3d4049;
+
+  /* — Brand orange — */
+  --color-orange: #f2581c;       /* ana parlak turuncu — birincil aksiyon */
+  --color-orange-bright: #ff6b1f;/* hover, highlight */
+  --color-orange-deep: #d14816;  /* pressed, active state */
+  --color-peach: #f8a878;        /* açık şeftali (secondary vurgu) */
+  --color-peach-soft: #ffd9b8;   /* en açık tint, badge background */
+
+  /* — Semantic — */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+
+  /* =========================================================
+     2. TİPOGRAFİ
+     .docs/02-DESIGN-SYSTEM.md Bölüm 2
+     ========================================================= */
+
+  /* Font ailesi */
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+
+  /* — Display sizes (Bricolage Grotesque) — */
+  --text-display-2xl: clamp(72px, 10vw, 168px);  /* hero başlık */
+  --text-display-xl:  clamp(56px, 8vw, 124px);   /* manifesto quote */
+  --text-display-lg:  clamp(48px, 6vw, 96px);    /* feature title */
+  --text-display-md:  clamp(36px, 4.5vw, 64px);  /* section başlık */
+  --text-display-sm:  clamp(28px, 3vw, 44px);    /* card başlık */
+
+  /* — Body sizes (Manrope) — */
+  --text-2xl: 20px;    /* lead paragraph */
+  --text-xl:  18px;    /* large body */
+  --text-lg:  16px;    /* default body */
+  --text-md:  14px;    /* secondary body */
+  --text-sm:  13px;    /* meta, caption */
+  --text-xs:  12px;    /* eyebrow, label */
+  --text-2xs: 11px;    /* tiny labels */
+  --text-3xs: 10px;    /* micro tags */
+
+  /* =========================================================
+     3. SPACING SCALE
+     .docs/02-DESIGN-SYSTEM.md Bölüm 3
+     ========================================================= */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+
+  /* Section padding kuralları */
+  --section-padding: 160px;   /* standart (desktop) */
+  --section-padding-compact: 96px;
+  --section-padding-spacious: 200px;
+  --section-padding-mobile: 100px;
+
+  /* =========================================================
+     4. BORDER RADIUS
+     .docs/02-DESIGN-SYSTEM.md Bölüm 4
+     ========================================================= */
+
+  --radius-none: 0;
+  --radius-sm:   4px;    /* çoğu durumda kullanılacak */
+  --radius-md:   6px;    /* kart ve panel */
+  --radius-lg:   8px;    /* logo bloğu, prominent kartlar */
+  --radius-xl:   12px;   /* büyük kartlar */
+  --radius-pill: 100px;  /* button ve tag */
+  --radius-full: 50%;    /* avatar, icon circle */
+
+  /* =========================================================
+     5. SHADOWS
+     .docs/02-DESIGN-SYSTEM.md Bölüm 5
+     ========================================================= */
+
+  --shadow-xs:  0 1px 2px rgba(22, 24, 29, 0.04);
+  --shadow-sm:  0 2px 4px rgba(22, 24, 29, 0.06);
+  --shadow-md:  0 8px 16px -4px rgba(22, 24, 29, 0.08);
+  --shadow-lg:  0 16px 32px -8px rgba(22, 24, 29, 0.12);
+  --shadow-xl:  0 24px 48px -16px rgba(22, 24, 29, 0.18);
+  --shadow-2xl: 0 32px 64px -24px rgba(22, 24, 29, 0.25);
+
+  /* Renkli shadow — sadece hover state */
+  --shadow-orange:      0 12px 32px -8px rgba(242, 88, 28, 0.45);
+  --shadow-orange-soft: 0 16px 40px -12px rgba(242, 88, 28, 0.25);
+
+  /* =========================================================
+     6. MOTION & ANIMATION
+     .docs/02-DESIGN-SYSTEM.md Bölüm 6
+     ========================================================= */
+
+  /* Easing curves */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);        /* default — yumuşak son */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);       /* balanced */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);    /* hafif bounce — sadece micro */
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);        /* exit animations */
+
+  /* Duration scale */
+  --dur-instant:  100ms;   /* color, opacity */
+  --dur-fast:     200ms;   /* hover state */
+  --dur-base:     300ms;   /* default transition */
+  --dur-slow:     500ms;   /* layout shift */
+  --dur-slower:   800ms;   /* reveal animations */
+  --dur-slowest: 1200ms;   /* hero reveals */
+
+  /* =========================================================
+     7. CONTAINER GENİŞLİKLERİ
+     .docs/02-DESIGN-SYSTEM.md Bölüm 3
+     ========================================================= */
+
+  --container-narrow: 1080px;  /* dar içerik */
+  --container:        1480px;  /* standart */
+  --container-wide:   1640px;  /* geniş layout */
+
+  /* =========================================================
+     8. RESPONSIVE BREAKPOINTS
+     .docs/02-DESIGN-SYSTEM.md Bölüm 14
+     ========================================================= */
+
+  --bp-sm:  640px;
+  --bp-md:  768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-2xl: 1536px;
+
+  /* =========================================================
+     9. CONTAINER PADDING
+     .docs/02-DESIGN-SYSTEM.md Bölüm 3
+     ========================================================= */
+
+  --container-padding:    40px;  /* > 1100px */
+  --container-padding-md: 32px;  /* 700-1100px */
+  --container-padding-sm: 20px;  /* < 700px (mobil) */
+
+  /* =========================================================
+     10. BORDER GENİŞLİKLERİ
+     ========================================================= */
+
+  --border-thin:   1px;
+  --border-medium: 2px;
+
+  /* =========================================================
+     11. LETTER SPACING
+     .docs/02-DESIGN-SYSTEM.md Bölüm 2, 8, 12
+     ========================================================= */
+
+  --letter-spacing-eyebrow: 0.14em;   /* .eyebrow */
+  --letter-spacing-tba:     0.12em;   /* .tba badge */
+  --letter-spacing-label:   0.08em;   /* button, label */
+
+  /* =========================================================
+     12. COMPONENT-SPECIFIC TOKENS
+     .docs/02-DESIGN-SYSTEM.md Bölüm 8, 12
+     ========================================================= */
+
+  /* Eyebrow dekoratif çizgi */
+  --eyebrow-line-width:     28px;
+  --eyebrow-line-thickness: 2px;     /* --border-medium ile aynı */
+
+  /* TBA badge boyutları */
+  --tba-font-size:     9px;   /* --text-3xs (10px) altında, DS özel */
+  --tba-dot-size:      5px;
+  --tba-border-radius: 3px;
+  --tba-padding-y:     3px;
+  --tba-padding-x:     7px;
+  --tba-margin-left:   6px;
+
+  /* Photo slot */
+  --photo-slot-icon-size:      40px;
+  --photo-slot-icon-font-size: 32px;  /* ikon glyph boyutu */
+
+  /* =========================================================
+     13. REVEAL & STAGGER ANİMASYON TOKEN'LARI
+     .docs/02-DESIGN-SYSTEM.md Bölüm 6
+     ========================================================= */
+
+  --reveal-translate-y: 28px;    /* fade-up mesafesi */
+
+  /* Stagger delays: reveal-d1 → reveal-d5 */
+  --stagger-1: 80ms;
+  --stagger-2: 160ms;
+  --stagger-3: 240ms;
+  --stagger-4: 320ms;
+  --stagger-5: 400ms;
+
+  /* Hero title */
+  --dur-hero-title: 1.4s;
+  /* Hero title nth-child delays: 100ms = --dur-instant, 200ms = --dur-fast */
+
+  /* =========================================================
+     14. DARK SECTION GLOW
+     .docs/02-DESIGN-SYSTEM.md Bölüm 15
+     ========================================================= */
+
+  --glow-size-lg:      800px;
+  --glow-size-md:      700px;
+  --glow-offset-x:    -200px;   /* sağ/sol negatif offset */
+  --glow-offset-b:    -300px;   /* alt negatif offset */
+
+  /* Glow opaklıkları — CSS relative color ile kullanılır */
+  --glow-orange-opacity: 0.18;
+  --glow-peach-opacity:  0.08;
+  --glow-tba-opacity:    0.12;
+}

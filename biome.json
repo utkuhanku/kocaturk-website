@@ -1,7 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
-  "organizeImports": {
-    "enabled": true
+  "$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "linter": {
     "enabled": true,
@@ -23,23 +27,31 @@
     "lineWidth": 100
   },
   "files": {
-    "ignore": [
-      "node_modules",
-      ".next",
-      ".docs",
-      "public",
-      "sanity/node_modules"
-    ]
+    "includes": ["**", "!node_modules", "!.next", "!.docs", "!public", "!sanity/node_modules"]
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    },
+    "linter": {
+      "enabled": false
+    }
   },
   "overrides": [
     {
-      "include": ["**/*.tsx", "**/*.ts"],
+      "includes": ["**/*.tsx", "**/*.ts"],
       "linter": {
         "rules": {
           "correctness": {
             "noUnusedVariables": "error"
           }
         }
+      }
+    },
+    {
+      "includes": ["src/styles/globals.css", "src/app/globals.css"],
+      "css": {
+        "formatter": { "enabled": false }
       }
     }
   ]
