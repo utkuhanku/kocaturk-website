@@ -1,7 +1,8 @@
 name: Lighthouse CI
 
-# Faz 2 sonuna kadar warn modunda — ana sayfa placeholder aşamasında
-# Performance 95+ hedefi: .docs/10-ROADMAP.md Faz 2 tamamlandığında enforce edilir
+# Faz 2 sonuna kadar tüm assert'ler off — sadece raporu artifact olarak topluyor.
+# Faz 2 hero/manifesto yazıldıktan sonra performance, accessibility, best-practices, seo
+# geri açılacak. @see lighthouserc.json, .docs/10-ROADMAP.md Faz 2
 on:
   push:
     branches: ['main']
