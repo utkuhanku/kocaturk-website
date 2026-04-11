@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "sanity": "sanity dev",
+    "sanity": "cd sanity && npm install --silent && sanity dev",
     "check": "biome check .",
     "check:write": "biome check --write .",
     "type-check": "tsc --noEmit"

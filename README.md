@@ -1,6 +1,6 @@
 # Kocatürk Okulları — Website
 
-Next.js 15 ile inşa edilmiş kurumsal website.
+Next.js 16 ile inşa edilmiş kurumsal website.
 
 ## Proje Spesifikasyonu
 
@@ -23,7 +23,7 @@ Tüm tasarım, içerik, mimari ve kural belgeleri `.docs/` klasöründedir. Kod 
 
 ## Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Dil:** TypeScript (strict mode)
 - **Styling:** Tailwind CSS 4 + CSS Variables
 - **CMS:** Sanity (headless)

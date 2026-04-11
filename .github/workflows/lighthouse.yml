@@ -1,0 +1,32 @@
+name: Lighthouse CI
+
+# Faz 2 sonuna kadar warn modunda — ana sayfa placeholder aşamasında
+# Performance 95+ hedefi: .docs/10-ROADMAP.md Faz 2 tamamlandığında enforce edilir
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  lighthouse:
+    name: Lighthouse Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Production build
+        run: npm run build
+
+      - name: Run Lighthouse CI
+        run: npx @lhci/cli@0.13.x autorun --upload.target=temporary-public-storage
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
