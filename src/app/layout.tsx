@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import { MotionProvider } from "@/components/motion-provider";
+import "boxicons/css/boxicons.min.css";
 import "./globals.css";
 
 /* =========================================================

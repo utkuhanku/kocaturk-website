@@ -214,6 +214,34 @@
   --photo-slot-icon-size: 40px;
   --photo-slot-icon-font-size: 32px; /* ikon glyph boyutu */
 
+  /* 12b. BUTTON */
+  --btn-padding-y-sm: 10px;
+  --btn-padding-x-sm: 18px;
+  --btn-padding-y-md: 16px;
+  --btn-padding-x-md: 28px;
+  --btn-padding-y-lg: 20px;
+  --btn-padding-x-lg: 36px;
+  --btn-font-size-sm: var(--text-xs); /* 12px */
+  --btn-font-size-md: var(--text-sm); /* 13px */
+  --btn-font-size-lg: var(--text-md); /* 14px */
+  --btn-icon-gap: var(--space-2);
+  --btn-hover-lift: -2px; /* translateY hover */
+  --btn-icon-hover-shift: 4px; /* sağ icon translateX */
+  --btn-outline-light-hover-bg: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* outline-light hover — CSS'te inline rgba() yasak */
+  --btn-outline-light-border: rgba(255, 255, 255, 0.8);
+
+  /* 12c. INPUT */
+  --input-height: 52px;
+  --input-padding-x: var(--space-4);
+  --input-font-size: var(--text-lg); /* 16px — iOS zoom önlemi */
+  --input-label-font-size: var(--text-xs);
+  --input-error-font-size: var(--text-sm);
+
   /* =========================================================
      13. REVEAL & STAGGER ANİMASYON TOKEN'LARI
      .docs/02-DESIGN-SYSTEM.md Bölüm 6
