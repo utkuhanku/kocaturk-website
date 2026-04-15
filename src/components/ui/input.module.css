@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.fieldWrap {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 var(--input-padding-x);
+  font-family: var(--font-body);
+  font-size: var(--input-font-size); /* 16px — iOS zoom önlemi */
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--color-ink-soft);
+}
+
+.input:focus {
+  border-color: var(--color-orange);
+  /* 3px focus ring genişliği — WCAG 2.1 AA, globals.css outline kuralıyla tutarlı */
+  box-shadow: 0 0 0 3px var(--color-peach-soft);
+}
+
+.input:disabled {
+  background-color: var(--color-surface-2);
+  color: var(--color-ink-mute);
+  cursor: not-allowed;
+}
+
+.hasError {
+  border-color: var(--color-error);
+}
+
+.hasError:focus {
+  border-color: var(--color-error);
+  box-shadow: none;
+}
+
+/* Icon padding offsets */
+.hasIconLeft {
+  padding-left: calc(var(--input-padding-x) + var(--space-8));
+}
+
+.hasIconRight {
+  padding-right: calc(var(--input-padding-x) + var(--space-8));
+}
+
+/* Icon wrapper */
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-ink-mute);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  font-size: var(--text-xl);
+}
+
+.iconLeft {
+  left: var(--input-padding-x);
+}
+
+.iconRight {
+  right: var(--input-padding-x);
+}
+
+/* Error message */
+.errorMessage {
+  font-family: var(--font-body);
+  font-size: var(--input-error-font-size);
+  color: var(--color-error);
+  line-height: 1.4;
+}

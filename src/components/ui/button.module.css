@@ -1,0 +1,159 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--btn-icon-gap);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  line-height: 1;
+  cursor: pointer;
+  border: var(--border-thin) solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-instant) var(--ease-out);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---- Sizes ---- */
+
+.sm {
+  padding: var(--btn-padding-y-sm) var(--btn-padding-x-sm);
+  font-size: var(--btn-font-size-sm);
+  min-height: 44px; /* iOS tap target — Apple HIG */
+}
+
+.md {
+  padding: var(--btn-padding-y-md) var(--btn-padding-x-md);
+  font-size: var(--btn-font-size-md);
+  min-height: 44px;
+}
+
+.lg {
+  padding: var(--btn-padding-y-lg) var(--btn-padding-x-lg);
+  font-size: var(--btn-font-size-lg);
+  min-height: 44px;
+}
+
+/* ---- Variants ---- */
+
+/* primary */
+.primary {
+  background-color: var(--color-orange);
+  color: var(--color-surface);
+  border-color: var(--color-orange);
+}
+
+.primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--color-orange-bright);
+  border-color: var(--color-orange-bright);
+  box-shadow: var(--shadow-orange);
+  transform: translateY(var(--btn-hover-lift));
+}
+
+.primary:active:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--color-orange-deep);
+  border-color: var(--color-orange-deep);
+  box-shadow: none;
+  transform: none;
+}
+
+/* outline */
+.outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-line-strong);
+}
+
+.outline:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--color-surface-2);
+  border-color: var(--color-ink);
+  transform: translateY(var(--btn-hover-lift));
+}
+
+/* outline-light — dark bg üzerinde, token'dan rgba */
+.outlineLight {
+  background-color: transparent;
+  color: var(--color-surface);
+  border-color: var(--btn-outline-light-border);
+}
+
+.outlineLight:hover:not(:disabled):not([aria-disabled="true"]) {
+  background-color: var(--btn-outline-light-hover-bg);
+  transform: translateY(var(--btn-hover-lift));
+}
+
+/* ghost */
+.ghost {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: transparent;
+  position: relative;
+}
+
+.ghost::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--border-thin);
+  background-color: var(--color-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.ghost:hover:not(:disabled):not([aria-disabled="true"])::after {
+  transform: scaleX(1);
+}
+
+.ghost:hover:not(:disabled):not([aria-disabled="true"]) {
+  color: var(--color-ink);
+}
+
+/* ---- Icon ---- */
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 1.1em;
+}
+
+.iconRight {
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.btn:hover:not(:disabled):not([aria-disabled="true"]) .iconRight {
+  transform: translateX(var(--btn-icon-hover-shift));
+}
+
+/* ---- Loading spinner ---- */
+
+.spinner {
+  animation: btnSpin var(--dur-slow) linear infinite;
+}
+
+@keyframes btnSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
