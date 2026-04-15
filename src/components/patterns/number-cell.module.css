@@ -1,0 +1,64 @@
+/**
+ * NumberCell — CSS Module
+ * Size variant'lar: .sm / .md / .lg → .number font-size override
+ */
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid var(--color-orange);
+  padding-left: var(--space-5);
+}
+
+/* ── Number (NumberCounter wrapper) ── */
+.number {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md); /* md default */
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+/* Size variants */
+.sm .number {
+  font-size: var(--text-display-sm);
+}
+
+.md .number {
+  font-size: var(--text-display-md);
+}
+
+.lg .number {
+  font-size: var(--text-display-lg);
+}
+
+/* ── Label ── */
+.label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-3xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+}
+
+/* ── Sublabel ── */
+.sublabel {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-2xs);
+  color: var(--color-ink-mute);
+  opacity: 0.7;
+  margin-top: var(--space-1);
+}
+
+/* ── Dark variant ── */
+.dark .number {
+  color: var(--color-surface);
+}
+
+.dark .label {
+  color: var(--color-ink-soft);
+}
