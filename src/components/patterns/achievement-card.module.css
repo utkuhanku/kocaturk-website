@@ -1,0 +1,111 @@
+/**
+ * AchievementCard — CSS Module
+ * Hover: translateY(-4px), shadow-md, border orange
+ * featured: border orange + peach-soft bg (font farkı yok)
+ * Category badge renkleri: akademik=orange, sportif=success, uluslararasi=peach-soft/orange, sanatsal=warning/ink
+ */
+
+.card {
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-6) var(--space-8);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-orange);
+}
+
+/* ── Featured variant ── */
+.featured {
+  border-color: var(--color-orange);
+  background-color: var(--color-peach-soft);
+}
+
+/* ── Category badge ── */
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-3xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  align-self: flex-start;
+}
+
+.akademik {
+  background-color: var(--color-orange);
+  color: var(--color-surface);
+}
+
+.sportif {
+  background-color: var(--color-success);
+  color: var(--color-surface);
+}
+
+.uluslararasi {
+  background-color: var(--color-peach-soft);
+  color: var(--color-orange);
+}
+
+.sanatsal {
+  background-color: var(--color-warning);
+  color: var(--color-ink);
+}
+
+/* ── Position (e.g. "1. Derece") ── */
+.position {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+/* ── Title ── */
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+
+/* ── Student name ── */
+.studentName {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-orange);
+}
+
+/* ── Meta (date + location) ── */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  margin-top: auto;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
