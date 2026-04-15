@@ -16,6 +16,8 @@
  */
 
 import type { ReactNode } from "react";
+import type { AspectRatio, SlotCategory } from "@/components/photo-slot";
+import { PhotoSlot } from "@/components/photo-slot";
 import { cn } from "@/lib/cn";
 
 type ContentNoteType = "text" | "photo" | "video" | "data" | "testimonial";
@@ -30,6 +32,10 @@ interface ContentNoteProps {
   dark?: boolean;
   children?: ReactNode;
   className?: string;
+  /* photo-slot variant için — eksikse default'lar devreye girer */
+  aspectRatio?: AspectRatio;
+  slotId?: string;
+  category?: SlotCategory;
 }
 
 const TYPE_ICONS: Record<ContentNoteType, string> = {
@@ -54,6 +60,9 @@ export function ContentNote({
   dark = false,
   children,
   className,
+  aspectRatio = "16:9",
+  slotId = "PLACEHOLDER",
+  category = "GALLERY",
 }: ContentNoteProps) {
   /* ── Inline: pill badge (.tba utility class) ── */
   if (variant === "inline") {
@@ -64,8 +73,24 @@ export function ContentNote({
     );
   }
 
-  /* ── Block + photo-slot: dashed border card ──
-     photo-slot → <PhotoSlot> delegate (Aşama 3); şimdilik block fallback */
+  /* ── photo-slot: PhotoSlot'a delegate ── */
+  if (variant === "photo-slot") {
+    const slotType = type === "video" ? "video" : "photo";
+    return (
+      <PhotoSlot
+        aspectRatio={aspectRatio}
+        slotId={slotId}
+        category={category}
+        type={slotType}
+        title={description ?? STATUS_LABELS[status]}
+        description={`${type.toUpperCase()} \u00B7 ${STATUS_LABELS[status]}`}
+        variant={dark ? "dark" : "light"}
+        className={className}
+      />
+    );
+  }
+
+  /* ── Block: dashed border card ── */
   const borderColor = dark ? "var(--color-peach)" : "var(--color-orange)";
   const bgColor = dark ? "var(--color-anthracite-soft)" : "var(--color-peach-soft)";
   const accentColor = dark ? "var(--color-peach)" : "var(--color-orange)";
@@ -119,19 +144,6 @@ export function ContentNote({
             }}
           >
             {description}
-          </p>
-        )}
-        {variant === "photo-slot" && (
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "var(--text-2xs)",
-              color: mutedColor,
-              marginTop: "var(--space-2)",
-              opacity: 0.7,
-            }}
-          >
-            Photo slot {"\u2014"} A\u015fama 3{"\u2019"}te in\u015fa edilecek
           </p>
         )}
       </div>
