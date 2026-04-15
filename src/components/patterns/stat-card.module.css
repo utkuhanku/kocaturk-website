@@ -1,6 +1,6 @@
 /**
  * StatCard — CSS Module
- * Hover: translateY(-4px), shadow-md, border orange
+ * Hover: translateY(var(--card-hover-lift)), shadow-md, border orange
  */
 
 .card {
@@ -17,7 +17,7 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--card-hover-lift));
   box-shadow: var(--shadow-md);
   border-color: var(--color-orange);
 }

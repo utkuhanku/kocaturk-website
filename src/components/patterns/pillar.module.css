@@ -1,6 +1,6 @@
 /**
  * Pillar — CSS Module
- * Hover: translateY(-4px) hardcoded (Button'ın --btn-hover-lift -2px'inden farklı)
+ * Hover: translateY(var(--card-hover-lift)) — Button'ın --btn-hover-lift -2px'inden farklı
  * .title em: font-style: normal — italic YASAK (09-RULES)
  */
 
@@ -20,7 +20,7 @@
 }
 
 .pillar:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--card-hover-lift));
   box-shadow: var(--shadow-md);
   border-color: var(--color-orange);
 }

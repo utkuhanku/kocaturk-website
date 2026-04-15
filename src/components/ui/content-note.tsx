@@ -19,6 +19,7 @@ import type { ReactNode } from "react";
 import type { AspectRatio, SlotCategory } from "@/components/photo-slot";
 import { PhotoSlot } from "@/components/photo-slot";
 import { cn } from "@/lib/cn";
+import styles from "./content-note.module.css";
 
 type ContentNoteType = "text" | "photo" | "video" | "data" | "testimonial";
 type ContentNoteStatus = "tba" | "pending" | "review";
@@ -91,61 +92,19 @@ export function ContentNote({
   }
 
   /* ── Block: dashed border card ── */
-  const borderColor = dark ? "var(--color-peach)" : "var(--color-orange)";
-  const bgColor = dark ? "var(--color-anthracite-soft)" : "var(--color-peach-soft)";
-  const accentColor = dark ? "var(--color-peach)" : "var(--color-orange)";
-  const mutedColor = dark ? "var(--color-ink-soft)" : "var(--color-ink-mute)";
-
   return (
     <div
       data-content-note={type}
-      className={className}
+      className={cn(styles.block, dark && styles.dark, className)}
       role="img"
       aria-label={`${STATUS_LABELS[status]}: ${type}${description ? ` \u2014 ${description}` : ""}`}
-      style={{
-        border: `var(--border-thin) dashed ${borderColor}`,
-        borderRadius: "var(--radius-sm)",
-        padding: "var(--space-8)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "var(--space-3)",
-        textAlign: "center",
-        backgroundColor: bgColor,
-        minHeight: "var(--space-32)",
-      }}
     >
-      <i
-        className={TYPE_ICONS[type]}
-        aria-hidden="true"
-        style={{ fontSize: "var(--text-2xl)", color: accentColor, opacity: 0.7 }}
-      />
-      <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-1)" }}>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "var(--tba-font-size)",
-            fontWeight: 700,
-            textTransform: "uppercase",
-            letterSpacing: "var(--letter-spacing-tba)",
-            color: accentColor,
-          }}
-        >
+      <i className={cn(TYPE_ICONS[type], styles.blockIcon)} aria-hidden="true" />
+      <div className={styles.blockInner}>
+        <p className={styles.blockLabel}>
           {type.toUpperCase()} {"\u00B7"} {STATUS_LABELS[status]}
         </p>
-        {description && (
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "var(--text-sm)",
-              color: mutedColor,
-              lineHeight: 1.5,
-            }}
-          >
-            {description}
-          </p>
-        )}
+        {description && <p className={styles.blockDesc}>{description}</p>}
       </div>
     </div>
   );

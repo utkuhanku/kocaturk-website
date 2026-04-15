@@ -1,6 +1,6 @@
 /**
  * AchievementCard — CSS Module
- * Hover: translateY(-4px), shadow-md, border orange
+ * Hover: translateY(var(--card-hover-lift)), shadow-md, border orange
  * featured: border orange + peach-soft bg (font farkı yok)
  * Category badge renkleri: akademik=orange, sportif=success, uluslararasi=peach-soft/orange, sanatsal=warning/ink
  */
@@ -22,7 +22,7 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--card-hover-lift));
   box-shadow: var(--shadow-md);
   border-color: var(--color-orange);
 }

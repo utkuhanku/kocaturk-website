@@ -23,7 +23,7 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(var(--card-hover-lift));
   box-shadow: var(--shadow-md);
   border-color: var(--color-orange);
 }

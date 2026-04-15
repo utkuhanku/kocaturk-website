@@ -226,6 +226,7 @@
   --btn-font-size-lg: var(--text-md); /* 14px */
   --btn-icon-gap: var(--space-2);
   --btn-hover-lift: -2px; /* translateY hover */
+  --card-hover-lift: -4px; /* Card translateY hover — Button --btn-hover-lift -2px'ten farklı */
   --btn-icon-hover-shift: 4px; /* sağ icon translateX */
   --btn-outline-light-hover-bg: rgba(
     255,
