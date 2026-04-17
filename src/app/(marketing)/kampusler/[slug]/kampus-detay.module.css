@@ -1,0 +1,305 @@
+/* /kampusler/[slug] — Kampüs Detay Sayfası */
+
+/* ── Hero ── */
+.hero {
+  padding: var(--section-padding-compact) 0;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.badge {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-peach);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: var(--space-3) 0 var(--space-6);
+}
+
+.heroHikaye {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: var(--space-8);
+}
+
+.kademelerList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.kademeTag {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  background-color: var(--color-anthracite-soft);
+  border: var(--border-thin) solid var(--color-anthracite-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+}
+
+.heroPhoto {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ── Stats ── */
+.statsSection {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg);
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+/* ── Shared section styles ── */
+.kademelerSection,
+.tesislerSection,
+.mudurSection,
+.iletisimSection {
+  padding: var(--section-padding-compact) 0;
+  background-color: var(--color-bg);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: var(--space-4) 0 var(--space-10);
+}
+
+/* ── Kademeler ── */
+.kademelerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.kademeCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.kademeCard:hover {
+  border-color: var(--color-orange);
+}
+
+.kademeCard i {
+  font-size: var(--text-xl);
+  color: var(--color-orange);
+  flex-shrink: 0;
+}
+
+.kademeCardName {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+/* ── Tesisler ── */
+.tesislerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.tesisItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+}
+
+.tesisItem i {
+  font-size: var(--text-xl);
+  color: var(--color-orange);
+  flex-shrink: 0;
+}
+
+.tesisItem span {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+/* ── Müdür ── */
+.mudurCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-10);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  max-width: 480px;
+}
+
+.mudurPhoto {
+  width: 96px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.mudurInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mudurIsim {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: var(--space-2) 0 0;
+}
+
+.mudurPozisyon {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+}
+
+/* ── İletişim ── */
+.iletisimInner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.iletisimInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.iletisimRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.iletisimRow i {
+  font-size: var(--text-xl);
+  color: var(--color-orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.iletisimRow p,
+.iletisimLink {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-ink);
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.iletisimLink:hover {
+  color: var(--color-orange);
+}
+
+.iletisimCta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+}
+
+.iletisimMap {
+  min-height: 360px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPhoto {
+    order: -1;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kademelerGrid,
+  .tesislerList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .iletisimInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: var(--text-display-md);
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  .kademelerGrid,
+  .tesislerList {
+    grid-template-columns: 1fr;
+  }
+
+  .mudurCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

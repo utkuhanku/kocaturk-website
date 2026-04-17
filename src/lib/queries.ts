@@ -61,6 +61,9 @@ export const singleCampusQuery = groq`
   }
 `;
 
+/** Tüm kampüs slug'ları (generateStaticParams için) */
+export const campusSlugsQuery = groq`*[_type == "campus"]{ "slug": slug.current }`;
+
 /* =========================================================
    HABER SORGULARI
    ========================================================= */

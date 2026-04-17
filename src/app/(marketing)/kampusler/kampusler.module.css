@@ -1,0 +1,87 @@
+/* /kampusler — Kampüs Listesi Sayfası */
+
+/* ── Mini Hero ── */
+.hero {
+  padding: var(--section-padding-compact) 0 var(--space-16);
+  background-color: var(--color-bg);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+.heroLede {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+/* ── Harita ── */
+.mapSection {
+  padding: 0 0 var(--space-16);
+  background-color: var(--color-bg);
+}
+
+.mapFull {
+  min-height: 480px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ── Kampüs Grid ── */
+.gridSection {
+  padding: var(--space-16) 0 var(--section-padding);
+  background-color: var(--color-bg);
+}
+
+.group {
+  margin-bottom: var(--space-16);
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.groupTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+  margin-bottom: var(--space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: var(--text-display-lg);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapFull {
+    min-height: 320px;
+  }
+}

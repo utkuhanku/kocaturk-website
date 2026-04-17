@@ -1,11 +1,12 @@
 /**
- * CampusMap — 23 kampüs listesi + Mapbox placeholder
+ * CampusMap — Kampüs listesi + Mapbox harita (Faz 3)
  *
  * @see .docs/07-PAGE-SPECIFICATIONS.md#bölüm-8--campus-map
  * @see .docs/06-COMPONENT-LIBRARY.md#310-campusmap
  * @see src/components/sections/campus-map.module.css
  *
- * Server component. Sol: Mapbox placeholder (Faz 3'te entegre edilecek).
+ * Server component — CampusMapbox ('use client') lazy import ile.
+ * Sol: CampusMapbox (gerçek harita veya ContentNote fallback).
  * Sağ: Kampüs satırları listesi — Link + badge + kademe meta.
  *
  * @example
@@ -18,7 +19,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ContentNote } from "@/components/ui/content-note";
+import { CampusMapbox } from "@/components/campus-mapbox";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { cn } from "@/lib/cn";
 import styles from "./campus-map.module.css";
@@ -30,6 +31,7 @@ interface CampusSummary {
   il: string;
   badge?: "ana" | "ikinci-ana";
   kademeler: string[];
+  koordinatlar?: { lat: number; lng: number };
   href: string;
 }
 
@@ -41,6 +43,22 @@ interface CampusMapProps {
 }
 
 export function CampusMap({ eyebrow, title, campuses, className }: CampusMapProps) {
+  const mapCampuses = campuses.flatMap((c) =>
+    c.koordinatlar
+      ? [
+          {
+            slug: c.slug,
+            name: c.name,
+            ilce: c.ilce,
+            il: c.il,
+            badge: c.badge,
+            kademeler: c.kademeler,
+            koordinatlar: c.koordinatlar,
+          },
+        ]
+      : [],
+  );
+
   return (
     <section className={cn(styles.section, className)}>
       <div className="wrap">
@@ -52,13 +70,9 @@ export function CampusMap({ eyebrow, title, campuses, className }: CampusMapProp
         )}
 
         <div className={styles.inner}>
-          {/* Sol: Mapbox placeholder — Faz 3'te entegre edilecek */}
+          {/* Sol: Mapbox harita */}
           <div className={styles.mapSide}>
-            <ContentNote
-              type="data"
-              variant="block"
-              description="Mapbox interaktif harita — Faz 3'te entegre edilecek. 23 marker, Ege bölgesi."
-            />
+            <CampusMapbox campuses={mapCampuses} />
           </div>
 
           {/* Sağ: Kampüs listesi */}
