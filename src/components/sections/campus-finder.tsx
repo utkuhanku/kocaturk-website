@@ -21,11 +21,56 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { ContentNote } from "@/components/ui/content-note";
+import { CampusMapbox } from "@/components/campus-mapbox";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/cn";
 import styles from "./campus-finder.module.css";
+
+const FINDER_CAMPUSES = [
+  {
+    slug: "turgutlu",
+    name: "Manisa Turgutlu Kampüsü",
+    ilce: "Turgutlu",
+    il: "Manisa",
+    badge: "ana" as const,
+    kademeler: ["Anaokulu", "İlkokul", "Ortaokul", "Anadolu Lisesi", "Fen Lisesi"],
+    koordinatlar: { lat: 38.4955, lng: 27.7125 },
+  },
+  {
+    slug: "gaziemir",
+    name: "İzmir Gaziemir Kampüsü",
+    ilce: "Gaziemir",
+    il: "İzmir",
+    badge: "ikinci-ana" as const,
+    kademeler: ["Anaokulu", "İlkokul", "Ortaokul", "Anadolu Lisesi", "Havacılık Lisesi"],
+    koordinatlar: { lat: 38.318, lng: 27.129 },
+  },
+  {
+    slug: "uckuyular",
+    name: "İzmir Karabağlar Kampüsü",
+    ilce: "Üçkuyular",
+    il: "İzmir",
+    kademeler: ["İlkokul", "Ortaokul"],
+    koordinatlar: { lat: 38.386, lng: 27.119 },
+  },
+  {
+    slug: "kemalpasa",
+    name: "İzmir Kemalpaşa Kampüsü",
+    ilce: "Kemalpaşa",
+    il: "İzmir",
+    kademeler: ["İlkokul", "Ortaokul", "Lise"],
+    koordinatlar: { lat: 38.428, lng: 27.417 },
+  },
+  {
+    slug: "tire",
+    name: "İzmir Tire Kampüsü",
+    ilce: "Tire",
+    il: "İzmir",
+    kademeler: ["İlkokul", "Ortaokul", "Lise", "Fen Lisesi"],
+    koordinatlar: { lat: 38.088, lng: 27.733 },
+  },
+];
 
 interface CampusFinderProps {
   eyebrow?: string;
@@ -34,8 +79,18 @@ interface CampusFinderProps {
   className?: string;
 }
 
+// ilçe seçimini slug'a dönüştür
+const ILCE_TO_SLUG: Record<string, string> = {
+  turgutlu: "turgutlu",
+  gaziemir: "gaziemir",
+  uckuyular: "uckuyular",
+  kemalpasa: "kemalpasa",
+  tire: "tire",
+};
+
 export function CampusFinder({ eyebrow, title, description, className }: CampusFinderProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [selectedIlce, setSelectedIlce] = useState<string>("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -125,6 +180,7 @@ export function CampusFinder({ eyebrow, title, description, className }: CampusF
                       className={styles.select}
                       required
                       defaultValue=""
+                      onChange={(e) => setSelectedIlce(e.target.value)}
                     >
                       <option value="" disabled>
                         Seçiniz…
@@ -168,12 +224,11 @@ export function CampusFinder({ eyebrow, title, description, className }: CampusF
             )}
           </div>
 
-          {/* Sağ: Mapbox placeholder */}
+          {/* Sağ: Mapbox harita */}
           <div className={styles.mapSide}>
-            <ContentNote
-              type="data"
-              variant="block"
-              description="Faz 3'te: Harita üzerinde kampüsleri görün, en yakın kampüsü bulun. Mapbox GL JS entegrasyonu."
+            <CampusMapbox
+              campuses={FINDER_CAMPUSES}
+              activeCampus={ILCE_TO_SLUG[selectedIlce] ?? undefined}
             />
           </div>
         </div>

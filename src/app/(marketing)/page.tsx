@@ -284,6 +284,7 @@ export default function HomePage() {
             il: "Manisa",
             badge: "ana",
             kademeler: ["Anaokulu", "İlkokul", "Ortaokul", "Anadolu Lisesi", "Fen Lisesi"],
+            koordinatlar: { lat: 38.4955, lng: 27.7125 },
             href: "/kampusler/turgutlu",
           },
           {
@@ -293,6 +294,7 @@ export default function HomePage() {
             il: "İzmir",
             badge: "ikinci-ana",
             kademeler: ["Anaokulu", "İlkokul", "Ortaokul", "Lise", "✈ Havacılık Lisesi"],
+            koordinatlar: { lat: 38.318, lng: 27.129 },
             href: "/kampusler/gaziemir",
           },
           {
@@ -301,6 +303,7 @@ export default function HomePage() {
             ilce: "Üçkuyular",
             il: "İzmir",
             kademeler: ["İlkokul", "Ortaokul"],
+            koordinatlar: { lat: 38.386, lng: 27.119 },
             href: "/kampusler/uckuyular",
           },
           {
@@ -309,6 +312,7 @@ export default function HomePage() {
             ilce: "Kemalpaşa",
             il: "İzmir",
             kademeler: ["İlkokul", "Ortaokul", "Lise"],
+            koordinatlar: { lat: 38.428, lng: 27.417 },
             href: "/kampusler/kemalpasa",
           },
           {
@@ -317,6 +321,7 @@ export default function HomePage() {
             ilce: "Tire",
             il: "İzmir",
             kademeler: ["İlkokul", "Ortaokul", "Lise", "Fen Lisesi"],
+            koordinatlar: { lat: 38.088, lng: 27.733 },
             href: "/kampusler/tire",
           },
         ]}
