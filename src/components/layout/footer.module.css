@@ -18,28 +18,15 @@
 
 /* ── Brand column ── */
 .brandLogo {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   text-decoration: none;
   margin-bottom: var(--space-5);
 }
 
-.brandName {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-surface);
-  letter-spacing: -0.01em;
-  line-height: 1;
-}
-
-.brandYear {
-  font-family: var(--font-body);
-  font-size: var(--text-3xs);
-  font-weight: 500;
-  color: var(--color-ink-mute);
-  letter-spacing: var(--letter-spacing-label);
-  text-transform: uppercase;
+.brandLogoImage {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 .tagline {

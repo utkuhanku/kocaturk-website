@@ -16,6 +16,7 @@
 
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -59,8 +60,14 @@ export function SiteHeader() {
         <div className={cn("wrap", styles.inner)}>
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="Kocatürk Okulları — Ana Sayfa">
-            <span className={styles.logoName}>Kocatürk</span>
-            <span className={styles.logoYear}>1998</span>
+            <Image
+              src="/logo-kocaturk.png"
+              alt="Kocatürk Okulları"
+              width={120}
+              height={48}
+              className={styles.logoImage}
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -10,6 +10,7 @@
  * <SiteFooter />
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./footer.module.css";
 
@@ -23,8 +24,13 @@ export function SiteFooter() {
           {/* Sütun 1 — Marka */}
           <div>
             <Link href="/" className={styles.brandLogo} aria-label="Kocatürk Okulları — Ana Sayfa">
-              <span className={styles.brandName}>Kocatürk</span>
-              <span className={styles.brandYear}>1998</span>
+              <Image
+                src="/logo-kocaturk.png"
+                alt="Kocatürk Okulları"
+                width={96}
+                height={36}
+                className={styles.brandLogoImage}
+              />
             </Link>
             <p className={styles.tagline}>
               1998'den bu yana Ege'nin eğitim omurgası. Dört ilçede, yirmi üç kampüste kalıcı

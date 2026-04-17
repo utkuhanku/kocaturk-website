@@ -1,7 +1,7 @@
 /**
  * NumbersBanner — CSS Module
  * Zemin: .dark-section utility class (antrasit + glow) — dark variant
- * 4×2 grid: 8 NumberCell
+ * 3×3 grid: 9 NumberCell
  */
 
 .section {
@@ -34,7 +34,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-12);
   row-gap: var(--space-16);
   position: relative;
@@ -42,16 +42,10 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-8);
-    row-gap: var(--space-12);
-  }
-}
-
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    row-gap: var(--space-12);
   }
 }

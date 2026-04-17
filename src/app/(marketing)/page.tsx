@@ -1,3 +1,4 @@
+import { CampusFinder } from "@/components/sections/campus-finder";
 import { CampusMap } from "@/components/sections/campus-map";
 import { CtaBand } from "@/components/sections/cta-band";
 import { FeaturedStory } from "@/components/sections/featured-story";
@@ -61,7 +62,7 @@ export default function HomePage() {
             number: "01",
             title: (
               <>
-                Yarım asırlık <em>buralılık</em>
+                Çeyrek asırlık <em>buralılık</em>
               </>
             ),
             body: "1998'den bu yana Ege'nin kalbinde eğitim veriyoruz. Turgutlu'da başlayan bu yolculuk dört ilçeye, yirmi üç kampüse ulaştı.",
@@ -105,7 +106,8 @@ export default function HomePage() {
         numbers={[
           { number: 4015, label: "ÖĞRENCİ", sublabel: "Aktif kayıt" },
           { number: 23, label: "KAMPÜS", sublabel: "4 ilçede" },
-          { number: 246, label: "ÖĞRETMEN", sublabel: "Kadromuz" },
+          { number: 246, label: "ÖĞRETMEN", sublabel: "Akademik kadro" },
+          { number: 52, label: "İDARİ KADRO", sublabel: "Yönetim + destek" },
           { number: 28, label: "YIL", sublabel: "1998–2026" },
           { number: 6, label: "KADEME", sublabel: "Anaokulu→Lise" },
           { number: 85, suffix: "%", label: "BAĞLILIK", sublabel: "Yıllık devam" },
@@ -251,6 +253,18 @@ export default function HomePage() {
           { flag: "🇮🇹", code: "ROMA", name: "İtalya", program: "Robot Olimpiyat" },
           { flag: "🇪🇺", code: "AB", name: "Avrupa", program: "Code Week" },
         ]}
+      />
+
+      <CampusFinder
+        eyebrow="Size En Yakın Kampüs"
+        title={
+          <>
+            Hangi kampüs
+            <br />
+            size daha <em>uygun?</em>
+          </>
+        }
+        description="Bilgilerinizi bırakın, en yakın kampüsümüzden sizi arayalım."
       />
 
       <CampusMap
