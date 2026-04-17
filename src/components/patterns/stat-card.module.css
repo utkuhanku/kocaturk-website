@@ -1,0 +1,67 @@
+/**
+ * StatCard — CSS Module
+ * Hover: translateY(var(--card-hover-lift)), shadow-md, border orange
+ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-6) var(--space-8);
+  background-color: var(--color-surface);
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(var(--card-hover-lift));
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-orange);
+}
+
+/* ── Icon ── */
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-peach-soft);
+  color: var(--color-orange);
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Number (NumberCounter wrapper) ── */
+.number {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+/* ── Label ── */
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+  margin-bottom: var(--space-2);
+}
+
+/* ── Description ── */
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+}

@@ -452,6 +452,9 @@
 
 #### Gün 4 — Final Check & DNS
 - [ ] `<ContentNote>` sayım: kalan placeholder kabul edilebilir mi?
+- [ ] `src/app/dev/` klasörünü tamamen sil (`rm -rf src/app/dev`) — VERCEL_ENV guard geçici katmandı, Faz 1'de eklendi
+- [ ] `lighthouserc.yml` assertions geri aç — Faz 0'da kapatıldı (commit `622613f`), Faz 8'de zorunlu
+- [ ] `.github/workflows/ci.yml` — `node-version: '20'` → `'22'` (Node 20 EOL: Nisan 2026)
 - [ ] Direktör son walkthrough
 - [ ] DNS hazırlık (Vercel + domain)
 - [ ] Production env vars
