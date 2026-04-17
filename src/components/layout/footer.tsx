@@ -25,7 +25,7 @@ export function SiteFooter() {
           <div>
             <Link href="/" className={styles.brandLogo} aria-label="Kocatürk Okulları — Ana Sayfa">
               <Image
-                src="/logo-kocaturk.png"
+                src="/logo-kocaturk-orange.png"
                 alt="Kocatürk Okulları"
                 width={96}
                 height={36}

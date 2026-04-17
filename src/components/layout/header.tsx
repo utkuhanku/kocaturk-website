@@ -61,7 +61,7 @@ export function SiteHeader() {
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="Kocatürk Okulları — Ana Sayfa">
             <Image
-              src="/logo-kocaturk.png"
+              src="/logo-kocaturk-orange.png"
               alt="Kocatürk Okulları"
               width={160}
               height={64}
