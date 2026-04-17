@@ -43,6 +43,7 @@
   height: 40px;
   width: auto;
   object-fit: contain;
+  mix-blend-mode: screen;
   transition: height var(--dur-fast) var(--ease-out);
 }
 
