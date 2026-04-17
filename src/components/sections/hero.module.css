@@ -132,8 +132,9 @@
     grid-template-columns: 1fr;
   }
 
+  /* Gerçek fotoğraf gelene kadar mobile'da placeholder gizle */
   .photoSide {
-    order: -1;
+    display: none;
   }
 
   .title {

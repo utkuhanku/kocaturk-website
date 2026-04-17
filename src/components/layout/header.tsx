@@ -370,6 +370,14 @@ export function SiteHeader() {
         aria-label="Mobil navigasyon"
       >
         <div className={styles.mobileCloseRow}>
+          <Image
+            src="/logo-kocaturk-orange.png"
+            alt="Kocatürk Okulları"
+            width={120}
+            height={48}
+            className={styles.logoImage}
+            unoptimized
+          />
           <button
             type="button"
             className={styles.mobileClose}
