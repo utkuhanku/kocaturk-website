@@ -24,7 +24,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 import styles from "./program-card.module.css";
 
-interface ProgramCardProps {
+export interface ProgramCardProps {
   icon: string;
   name: string;
   shortDesc: string;

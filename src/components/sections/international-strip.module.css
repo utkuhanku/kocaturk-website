@@ -1,0 +1,99 @@
+/**
+ * InternationalStrip — CSS Module
+ * dark-section zemin, 1fr / 1.2fr split
+ * Sağ: 3×2 ülke kartları grid
+ */
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* ── Sol içerik ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--color-peach);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+}
+
+/* ── Sağ: ülke kartları ── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.countryCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-6);
+  border: var(--border-thin) solid var(--color-anthracite-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-anthracite-soft);
+}
+
+.flag {
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.code {
+  font-family: var(--font-body);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+}
+
+.program {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

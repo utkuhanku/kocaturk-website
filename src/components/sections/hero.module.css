@@ -1,0 +1,156 @@
+/**
+ * Hero — CSS Module
+ * Zemin: .dark-section utility class (antrasit + glow)
+ * H1: .hero-title utility class (utilities.css'te tanımlı stagger)
+ * Stats row: border-top ile Hero içeriğinden ayrılır
+ */
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Sol içerik ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.folio {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-anthracite-line-soft);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+/* Hero title — .hero-title utility class ile kombinasyon */
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2xl);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--color-surface);
+  margin: 0;
+}
+
+/* Her satır ayrı .line div içinde */
+.titleLine {
+  display: block;
+  overflow: hidden;
+}
+
+.titleLineInner {
+  display: block;
+}
+
+.lede {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* ── Stats row ── */
+.statsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: var(--border-thin) solid var(--color-anthracite-line);
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-3xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+}
+
+.statsSubline {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-anthracite-line-soft);
+  margin-top: var(--space-2);
+  width: 100%;
+}
+
+/* ── Sağ fotoğraf ── */
+.photoSide {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .photoSide {
+    order: -1;
+  }
+
+  .title {
+    font-size: var(--text-display-xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: var(--text-display-lg);
+  }
+
+  .lede {
+    font-size: var(--text-lg);
+  }
+
+  .statsRow {
+    gap: var(--space-6);
+  }
+}

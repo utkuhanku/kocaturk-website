@@ -1,0 +1,66 @@
+/**
+ * Manifesto — CSS Module
+ * Asimetrik tipografik quote — her satır farklı indent (inline style — dynamic değer ✓)
+ * Altında 3 Pillar grid
+ */
+
+.section {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+/* ── Quote block ── */
+.quoteBlock {
+  margin: var(--space-16) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.quoteLine {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+.quoteLineEm {
+  color: var(--color-orange);
+}
+
+/* ── Pillars grid ── */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .quoteBlock {
+    margin: var(--space-12) 0;
+  }
+
+  .quoteLine {
+    font-size: var(--text-display-md);
+  }
+
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .quoteLine {
+    font-size: var(--text-display-sm);
+  }
+}

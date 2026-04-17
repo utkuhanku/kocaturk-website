@@ -25,7 +25,7 @@
 
 import { cn } from "@/lib/cn";
 
-export type AspectRatio = "16:9" | "4:3" | "1:1" | "3:4" | "4:5" | "21:9";
+export type AspectRatio = "16:9" | "16:10" | "4:3" | "1:1" | "3:4" | "4:5" | "21:9";
 export type SlotCategory = "HERO" | "FEATURED" | "GALLERY" | "PORTRAIT" | "CAMPUS";
 
 interface PhotoSlotProps {
@@ -41,6 +41,7 @@ interface PhotoSlotProps {
 
 const ASPECT_RATIOS: Record<AspectRatio, string> = {
   "16:9": "16 / 9",
+  "16:10": "16 / 10",
   "4:3": "4 / 3",
   "1:1": "1 / 1",
   "3:4": "3 / 4",

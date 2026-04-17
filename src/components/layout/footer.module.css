@@ -1,0 +1,194 @@
+/**
+ * SiteFooter — CSS Module
+ * Antrasit zemin, 5-sütun grid
+ * Alt bar: Copyright + legal linkler
+ */
+
+.footer {
+  background-color: var(--color-anthracite-deep);
+  padding: var(--space-20) 0 var(--space-8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: var(--space-12);
+  padding-bottom: var(--space-16);
+}
+
+/* ── Brand column ── */
+.brandLogo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: var(--space-5);
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-surface);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.brandYear {
+  font-family: var(--font-body);
+  font-size: var(--text-3xs);
+  font-weight: 500;
+  color: var(--color-ink-mute);
+  letter-spacing: var(--letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+  max-width: 240px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-anthracite-soft);
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  font-size: var(--text-lg);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.socialLink:hover {
+  background-color: var(--color-orange);
+  color: var(--color-surface);
+}
+
+/* ── Link columns ── */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+  margin-bottom: var(--space-5);
+  display: block;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footerLink {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  display: block;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footerLink:hover {
+  color: var(--color-peach);
+}
+
+.footerLinkFeatured {
+  color: var(--color-peach);
+}
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: var(--border-thin) solid var(--color-anthracite-line);
+  margin: 0 0 var(--space-6);
+}
+
+/* ── Bottom bar ── */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-mute);
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-mute);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.legalLink:hover {
+  color: var(--color-peach);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Accessibility ── */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
