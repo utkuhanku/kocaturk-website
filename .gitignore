@@ -45,3 +45,5 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+materials/
+.docs/PR-FAZ-1.md
