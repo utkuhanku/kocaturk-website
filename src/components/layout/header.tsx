@@ -62,13 +62,17 @@ export function SiteHeader() {
           <Link href="/" className={styles.logo} aria-label="Kocatürk Okulları — Ana Sayfa">
             <Image
               src="/logo-kocaturk-orange.png"
-              alt="Kocatürk Okulları"
+              alt=""
               width={160}
               height={64}
               className={styles.logoImage}
               priority
               unoptimized
             />
+            <span className={styles.logoText} aria-hidden="true">
+              <span className={styles.logoName}>Kocatürk</span>
+              <span className={styles.logoSub}>Okulları</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
