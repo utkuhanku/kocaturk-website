@@ -1,0 +1,161 @@
+/* /egitim/[slug] — Kademe Detay Sayfası stilleri */
+
+/* Hero */
+.hero {
+  padding: var(--section-padding) 0;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.heroDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.heroPhoto {
+  position: relative;
+  z-index: 1;
+}
+
+/* Highlights */
+.highlightsSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.highlightCard {
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.highlightNumber {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-orange);
+  line-height: 1;
+}
+
+.highlightText {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+/* Programs */
+.programsSection {
+  padding: var(--section-padding-compact) 0 var(--section-padding);
+  background-color: var(--color-surface-2, var(--color-bg));
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Kampüsler */
+.kampuslerSection {
+  padding: var(--section-padding-compact) 0 var(--section-padding);
+  background-color: var(--color-bg);
+}
+
+.kampuslerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPhoto {
+    order: -1;
+  }
+
+  .heroTitle {
+    font-size: var(--text-display-lg);
+  }
+
+  .highlightsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .programsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kampuslerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .programsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .kampuslerGrid {
+    grid-template-columns: 1fr;
+  }
+}

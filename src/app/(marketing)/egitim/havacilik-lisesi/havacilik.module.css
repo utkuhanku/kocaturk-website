@@ -1,0 +1,293 @@
+/* /egitim/havacilik-lisesi — Özel sayfa stilleri */
+
+/* Hero */
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.heroIcon {
+  font-size: var(--text-display-md);
+  line-height: 1;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: var(--color-peach);
+}
+
+.heroDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.heroPhoto {
+  position: relative;
+  z-index: 1;
+}
+
+/* USP Bandı */
+.uspSection {
+  padding: var(--section-padding-compact) 0;
+  background-color: var(--color-surface);
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.uspGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-12);
+}
+
+/* Ortak section başlık */
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+/* Müfredat */
+.mufredatSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.mufredatGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.mufredatCard {
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mufredatIconWrap {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-peach-soft);
+  border-radius: var(--radius-sm);
+  color: var(--color-orange);
+  font-size: var(--text-xl);
+}
+
+.mufredatTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.mufredatList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mufredatItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+}
+
+.mufredatItem i {
+  color: var(--color-orange);
+  font-size: var(--text-base);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Mezun Yolları */
+.mezunSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-surface);
+}
+
+.mezunGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.mezunCard {
+  padding: var(--space-8);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mezunIconWrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-peach-soft);
+  border-radius: var(--radius-md);
+  color: var(--color-orange);
+  font-size: var(--text-2xl);
+}
+
+.mezunTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.mezunDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+}
+
+/* Başvuru */
+.basvuruSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.basvuruInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.kriterList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.kriterItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+.kriterItem i {
+  color: var(--color-orange);
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.basvuruCta {
+  margin-top: var(--space-8);
+}
+
+.basvuruPhoto {
+  position: relative;
+}
+
+/* Galeri */
+.galeriSection {
+  padding: var(--section-padding-compact) 0 var(--section-padding);
+  background-color: var(--color-surface);
+}
+
+.galeriGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPhoto {
+    order: -1;
+  }
+
+  .heroTitle {
+    font-size: var(--text-display-lg);
+  }
+
+  .mufredatGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeriGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .basvuruInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .uspGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mezunGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mufredatGrid {
+    grid-template-columns: 1fr;
+  }
+}

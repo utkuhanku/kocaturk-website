@@ -31,6 +31,19 @@
 | 16 | Kampüs fotoğrafları (detay) | PhotoSlot placeholder | Faz 5 (gerçek fotoğraflar) | ⏳ |
 | 17 | Kampüs adres/telefon/email | Tahmini değerler | Utkus doğrulayacak | ⏳ |
 
+## Faz 4 Yeni Placeholder'ları
+
+| # | Placeholder | Mevcut değer | Tamamlanacağı faz | Durum |
+|---|---|---|---|---|
+| 18 | Robotik öğretmen isimleri | "—" (robotik-kodlama sayfası) | Utkus gerçek isimler verecek | ⏳ |
+| 19 | Havacılık Lisesi fotoğrafları | PhotoSlot placeholder (4 slot) | Faz 5 (gerçek fotoğraflar) | ⏳ |
+| 20 | Kademe sayfaları hero fotoğrafları | PhotoSlot placeholder (6 kademe) | Faz 5 (gerçek fotoğraflar) | ⏳ |
+| 21 | Robotik sayfası fotoğrafları | PhotoSlot placeholder (atölye, Roma) | Faz 5 (gerçek fotoğraflar) | ⏳ |
+| 22 | Yurtdışı sayfası fotoğrafı | PhotoSlot placeholder (hero, yaz okulu) | Faz 5 (gerçek fotoğraflar) | ⏳ |
+| 23 | eTwinning proje detayları | Tahmini içerik | Utkus gerçek proje adları + yılları verecek | ⏳ |
+| 24 | İngiltere Yaz Okulu kampüsü | Tahmini bilgiler (süre, içerik) | Utkus gerçek program detaylarını verecek | ⏳ |
+| 25 | Havacılık Lisesi başvuru kriterleri | Tahmini kriterler | Utkus SHGM/resmi gereksinimlerle güncelleyecek | ⏳ |
+
 ## Faz 8 Checklist (10-ROADMAP.md'den)
 
 - [ ] src/app/dev/ klasörünü tamamen sil
