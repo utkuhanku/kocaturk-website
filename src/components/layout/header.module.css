@@ -1,0 +1,355 @@
+/**
+ * SiteHeader — CSS Module
+ * Scroll > 200px: .scrolled class → compact padding + border-bottom
+ * Mega menu: CSS visibility/opacity transition (activeMenu state ile kombinasyon)
+ * Mobile: hamburger → full screen overlay
+ * Desktop nav: 1024px+ görünür
+ */
+
+/* ── Header shell ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-anthracite);
+  border-bottom: var(--border-thin) solid transparent;
+  padding: var(--space-5) 0;
+  transition:
+    padding var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.header.scrolled {
+  padding: var(--space-3) 0;
+  border-bottom-color: var(--color-anthracite-line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: height var(--dur-fast) var(--ease-out);
+}
+
+.header.scrolled .logoImage {
+  height: 36px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: font-size var(--dur-fast) var(--ease-out);
+}
+
+.logoSub {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-ink-mute);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: font-size var(--dur-fast) var(--ease-out);
+}
+
+.header.scrolled .logoName {
+  font-size: var(--text-md);
+}
+
+.header.scrolled .logoSub {
+  font-size: var(--text-2xs);
+}
+
+/* ── Desktop Nav ── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  padding: var(--space-5) var(--space-4);
+  display: block;
+  transition: color var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: var(--color-surface);
+}
+
+.navLinkSpecial {
+  color: var(--color-peach);
+}
+
+.navLinkSpecial:hover {
+  color: var(--color-orange-bright);
+}
+
+/* ── Mega Menu Panel ── */
+.megaMenu {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-anthracite-deep);
+  border: var(--border-thin) solid var(--color-anthracite-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  min-width: 380px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    visibility var(--dur-fast) var(--ease-out);
+  box-shadow: var(--shadow-xl);
+  pointer-events: none;
+}
+
+.megaMenu.megaMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.megaMenuWide {
+  min-width: 600px;
+}
+
+.megaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.megaCol h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+  margin-bottom: var(--space-4);
+}
+
+.megaLink {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.megaLink:hover {
+  color: var(--color-peach);
+}
+
+.megaLinkFeatured {
+  color: var(--color-peach);
+}
+
+.megaLinkFeatured:hover {
+  color: var(--color-orange-bright);
+}
+
+.megaDivider {
+  border: none;
+  border-top: var(--border-thin) solid var(--color-anthracite-line);
+  margin: var(--space-5) 0 var(--space-4);
+}
+
+.megaFooterLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-peach);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.megaFooterLink:hover {
+  color: var(--color-orange-bright);
+}
+
+/* ── Right Tools ── */
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.toolPhone {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.toolPhone:hover {
+  color: var(--color-surface);
+}
+
+/* ── Hamburger (mobile only) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-surface);
+  border-radius: 2px;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    opacity var(--dur-fast) var(--ease-out);
+}
+
+.hamburger.open .hamburgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Overlay ── */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--color-anthracite-deep);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform var(--dur-base) var(--ease-out);
+  padding: var(--space-20) var(--space-6) var(--space-10);
+}
+
+.mobileOverlay.mobileOpen {
+  transform: none;
+}
+
+.mobileCloseRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-10);
+}
+
+.mobileClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-2xl);
+  color: var(--color-ink-soft);
+  transition: color var(--dur-fast) var(--ease-out);
+  padding: var(--space-2);
+}
+
+.mobileClose:hover {
+  color: var(--color-surface);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobileNavLink {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-surface);
+  text-decoration: none;
+  padding: var(--space-3) 0;
+  display: block;
+  border-bottom: var(--border-thin) solid var(--color-anthracite-line);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-peach);
+}
+
+.mobileNavLinkSpecial {
+  color: var(--color-peach);
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+
+  .tools > *:not(.hamburger) {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

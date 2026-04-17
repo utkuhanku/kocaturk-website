@@ -28,7 +28,7 @@ import styles from "./news-card.module.css";
 
 type NewsCardSize = "featured" | "standard" | "compact";
 
-interface NewsCardProps {
+export interface NewsCardProps {
   slug: string;
   title: string;
   excerpt?: string;

@@ -1,0 +1,255 @@
+/**
+ * CampusFinder — CSS Module
+ * light section bg, 1fr/1fr grid (form sol, harita sağ)
+ * Faz 4: Mapbox sağ tarafa entegre edilecek
+ */
+
+.section {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--color-orange);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+}
+
+/* ── Ana grid ── */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* ── Sol: Form ── */
+.formSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* ── Select ── */
+.selectWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.selectLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-ink-mute);
+}
+
+.select {
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-sm);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-10);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-orange) 15%, transparent);
+}
+
+/* ── Textarea ── */
+.textareaWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-sm);
+  resize: vertical;
+  min-height: 88px;
+  transition: border-color var(--dur-fast) var(--ease-out);
+  line-height: 1.5;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-orange) 15%, transparent);
+}
+
+.textarea::placeholder {
+  color: var(--color-ink-mute);
+}
+
+/* ── Form footer ── */
+.formFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 48px;
+  padding: 0 var(--space-7);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-surface);
+  background-color: var(--color-orange);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.submitBtn:hover {
+  background-color: var(--color-orange-bright);
+  transform: translateY(var(--btn-hover-lift));
+}
+
+.submitBtn:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+.privacy {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-mute);
+  line-height: 1.4;
+}
+
+.privacyLink {
+  color: var(--color-orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Başarı mesajı ── */
+.successBox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-2xl);
+}
+
+.successBox > i {
+  color: var(--color-orange);
+  flex-shrink: 0;
+  font-size: var(--text-2xl);
+  margin-top: 2px;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: var(--space-1);
+}
+
+.successBody {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+}
+
+/* ── Sağ: Harita ── */
+.mapSide {
+  min-height: 440px;
+  display: flex;
+  align-items: stretch;
+}
+
+.mapSide > * {
+  flex: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mapSide {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

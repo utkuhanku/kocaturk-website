@@ -1,0 +1,51 @@
+/**
+ * NumbersBanner — CSS Module
+ * Zemin: .dark-section utility class (antrasit + glow) — dark variant
+ * 3×3 grid: 9 NumberCell
+ */
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--color-peach);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-12);
+  row-gap: var(--space-16);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    row-gap: var(--space-12);
+  }
+}

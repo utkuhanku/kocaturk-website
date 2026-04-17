@@ -22,7 +22,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import styles from "./pillar.module.css";
 
-interface PillarProps {
+export interface PillarProps {
   number: string;
   title: ReactNode;
   body: string;

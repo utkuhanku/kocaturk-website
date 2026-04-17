@@ -22,7 +22,7 @@ import { PhotoSlot } from "@/components/photo-slot";
 import { cn } from "@/lib/cn";
 import styles from "./testimonial-card.module.css";
 
-interface TestimonialCardProps {
+export interface TestimonialCardProps {
   quote: string;
   authorName: string;
   authorRole: string;
