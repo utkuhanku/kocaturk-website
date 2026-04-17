@@ -63,10 +63,11 @@ export function SiteHeader() {
             <Image
               src="/logo-kocaturk.png"
               alt="Kocatürk Okulları"
-              width={120}
-              height={48}
+              width={160}
+              height={64}
               className={styles.logoImage}
               priority
+              unoptimized
             />
           </Link>
 

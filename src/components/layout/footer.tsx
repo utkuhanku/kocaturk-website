@@ -30,6 +30,7 @@ export function SiteFooter() {
                 width={96}
                 height={36}
                 className={styles.brandLogoImage}
+                unoptimized
               />
             </Link>
             <p className={styles.tagline}>
