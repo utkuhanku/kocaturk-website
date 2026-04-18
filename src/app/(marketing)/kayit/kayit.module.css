@@ -1,0 +1,352 @@
+.heroSection {
+  padding: var(--section-padding-compact) 0;
+  background-color: var(--color-bg);
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: var(--color-orange);
+}
+
+.heroLede {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+  max-width: 680px;
+}
+
+/* Hub grid */
+.hubGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+
+.hubCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.hubCard:hover {
+  transform: translateY(var(--card-hover-lift));
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-orange);
+}
+
+.hubCardIcon {
+  font-size: var(--text-2xl);
+  color: var(--color-orange);
+}
+
+.hubCardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.hubCardDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Form layout */
+.formSection {
+  padding: var(--section-padding) 0;
+}
+
+.formInner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.formSidebar {
+  position: sticky;
+  top: calc(80px + var(--space-8));
+}
+
+.formSidebarTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.formSidebarTitle em {
+  font-style: normal;
+  color: var(--color-orange);
+}
+
+.formSidebarDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+}
+
+.formSidebarList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.formSidebarList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+}
+
+.formSidebarList li i {
+  color: var(--color-orange);
+  font-size: var(--text-base);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.formCard {
+  background-color: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-10);
+}
+
+/* Teşekkürler */
+.tesekkurlerSection {
+  padding: var(--section-padding) 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.tesekkurlerInner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.tesekkurlerIcon {
+  font-size: 4rem;
+  color: var(--color-orange);
+  line-height: 1;
+}
+
+.tesekkurlerTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.tesekkurlerDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+}
+
+.tesekkurlerCtas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+/* SSS accordion */
+.sssSection {
+  padding: var(--section-padding) 0;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: var(--space-4) 0 var(--space-12);
+}
+
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordionItem {
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.accordionItem:last-child {
+  border-bottom: none;
+}
+
+.accordionBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-8);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.accordionBtn:hover {
+  background-color: var(--color-surface-2);
+}
+
+.accordionQuestion {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.4;
+}
+
+.accordionChevron {
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  flex-shrink: 0;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.accordionChevronOpen {
+  transform: rotate(180deg);
+}
+
+.accordionBody {
+  padding: 0 var(--space-8) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-mute);
+  line-height: 1.7;
+}
+
+/* Ücretler */
+.ucretlerSection {
+  padding: var(--section-padding) 0;
+}
+
+.ucretlerNote {
+  margin-top: var(--space-12);
+}
+
+/* Bursluluk */
+.burslulukSection {
+  padding: var(--section-padding) 0;
+}
+
+.burslulukGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+
+.burslulukCard {
+  padding: var(--space-8);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.burslulukCardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.burslulukCardDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .formInner {
+    grid-template-columns: 1fr;
+  }
+
+  .formSidebar {
+    position: static;
+  }
+
+  .hubGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .burslulukGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hubGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard {
+    padding: var(--space-6);
+  }
+}

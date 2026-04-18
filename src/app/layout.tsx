@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Manrope } from "next/font/google";
 import { MotionProvider } from "@/components/motion-provider";
+import { organizationSchema } from "@/lib/schema";
 import "boxicons/css/boxicons.min.css";
 import "./globals.css";
 
@@ -72,6 +73,11 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${bricolage.variable} ${manrope.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: structured data injection
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+        />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

@@ -323,6 +323,11 @@ export function SiteHeader() {
               </Link>
             </div>
             <div className={styles.navItem}>
+              <Link href="/haberler" className={styles.navLink}>
+                Haberler
+              </Link>
+            </div>
+            <div className={styles.navItem}>
               <Link href="/kampus-yasami" className={styles.navLink}>
                 Kampüs Yaşamı
               </Link>
@@ -344,9 +349,12 @@ export function SiteHeader() {
 
           {/* Right Tools */}
           <div className={styles.tools}>
-            <a href="tel:+902363130000" className={styles.toolPhone} aria-label="Telefon numarası">
-              +90 236 313 00 00
+            <a href="tel:+905321111109" className={styles.toolPhone} aria-label="Telefon numarası">
+              0532 111 11 09
             </a>
+            <Button variant="primary" size="sm" href="/kayit/on-kayit">
+              Ön Kayıt
+            </Button>
             <Button variant="outline-light" size="sm" href="https://ekocaturk.k12.tr">
               e-Kocatürk
             </Button>
@@ -422,6 +430,13 @@ export function SiteHeader() {
             onClick={() => setMobileOpen(false)}
           >
             Başarılarımız
+          </Link>
+          <Link
+            href="/haberler"
+            className={styles.mobileNavLink}
+            onClick={() => setMobileOpen(false)}
+          >
+            Haberler
           </Link>
           <Link
             href="/kampus-yasami"
