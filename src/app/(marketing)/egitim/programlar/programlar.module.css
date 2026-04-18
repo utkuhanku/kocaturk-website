@@ -1,0 +1,52 @@
+/* /egitim/programlar — Hub Sayfası stilleri */
+
+.hero {
+  padding: var(--section-padding) 0 var(--section-padding-compact);
+  background-color: var(--color-bg);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.heroLede {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+.programlarSection {
+  padding: var(--section-padding-compact) 0 var(--section-padding);
+  background-color: var(--color-bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heroTitle {
+    font-size: var(--text-display-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

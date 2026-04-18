@@ -1,0 +1,322 @@
+/* /egitim/yurtdisi — Özel sayfa stilleri */
+
+/* Hero */
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: var(--color-peach);
+}
+
+.heroDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.heroPhoto {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ortak başlık */
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle em {
+  font-style: normal;
+  color: var(--color-orange);
+}
+
+/* İngiltere Yaz Okulu */
+.yazOkuluSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.yazOkuluInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.yazOkuluInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.yazOkuluMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.metaItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.metaItem > i {
+  font-size: var(--text-xl);
+  color: var(--color-orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.metaItem strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: var(--space-1);
+}
+
+.metaItem p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.yazOkuluCta {
+  padding-top: var(--space-4);
+}
+
+/* eTwinning */
+.etwinningSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-surface);
+}
+
+.etwinningGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.etwinningKart {
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.etwinningYil {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-orange);
+}
+
+.etwinningProjeAd {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.etwinningOrtak {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink-mute);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.etwinningAciklama {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+  line-height: 1.6;
+}
+
+/* Yarışmalar */
+.yarismaSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.yarismaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.yarismaKart {
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.yarismaHeader {
+  margin-bottom: var(--space-2);
+}
+
+.yarismaIsim {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+
+.yarismaMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-mute);
+}
+
+.yarismaTarih {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-mute);
+  font-weight: 500;
+}
+
+.yarismaSonuc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-orange);
+  font-weight: 600;
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+/* Ülkeler */
+.ulkelerSection {
+  padding: var(--section-padding-compact) 0 var(--section-padding);
+  background-color: var(--color-surface);
+}
+
+.ulkelerGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+}
+
+.ulkeKart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  text-align: center;
+}
+
+.ulkeBayrak {
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.ulkeKod {
+  font-family: var(--font-body);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+}
+
+.ulkeProgram {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPhoto {
+    order: -1;
+  }
+
+  .heroTitle {
+    font-size: var(--text-display-lg);
+  }
+
+  .yazOkuluInner {
+    grid-template-columns: 1fr;
+  }
+
+  .etwinningGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .yarismaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ulkelerGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ulkelerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
