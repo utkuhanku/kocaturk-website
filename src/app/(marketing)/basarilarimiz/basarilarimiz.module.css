@@ -1,0 +1,210 @@
+/* /basarilarimiz — Hub ve detay sayfası stilleri */
+
+/* Hero */
+.heroSection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: var(--color-orange);
+}
+
+.heroDesc {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  line-height: 1.65;
+  max-width: 600px;
+  margin-bottom: var(--space-12);
+}
+
+/* Filtre */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-6);
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.filterBtn {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink-mute);
+  background: none;
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-5);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.filterBtn:hover {
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.filterBtnActive {
+  color: var(--color-surface);
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.filterBtnActive:hover {
+  color: var(--color-surface);
+}
+
+/* Grid */
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  padding: var(--space-16);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-mute);
+}
+
+/* Detay sayfası */
+.detaySection {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-bg);
+}
+
+.detayInner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.detayContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.detayMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-mute);
+}
+
+.detayMetaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.detayTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.detayDerece {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 700;
+  color: var(--color-orange);
+  line-height: 1;
+}
+
+.detayAciklama {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-ink-mute);
+  line-height: 1.7;
+}
+
+.detayOgrenciler {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.detayOgrencilerBaslik {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-label);
+  color: var(--color-ink-mute);
+}
+
+.detayOgrencilerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.detayOgrenciItem {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.detaySide {
+  position: sticky;
+  top: calc(var(--space-20) + var(--space-4));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .detayInner {
+    grid-template-columns: 1fr;
+  }
+
+  .detaySide {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievementsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .achievementsGrid {
+    grid-template-columns: 1fr;
+  }
+}
