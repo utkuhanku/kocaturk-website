@@ -62,32 +62,30 @@ const HUB_LINKS = [
 
 export default function KurumsalPage() {
   return (
-    <>
-      <section className={styles.heroSection}>
-        <div className="wrap">
-          <Eyebrow>Kurumsal</Eyebrow>
-          <h1 className={styles.heroTitle}>
-            1998'den bugüne
-            <br />
-            <em>Ege'nin eğitim omurgası.</em>
-          </h1>
-          <p className={styles.heroDesc}>
-            Manisa Turgutlu'da 52 kişiyle başlayan bu yolculuk, bugün dört ilçede beş kampüs ve
-            4.000'den fazla öğrenciye ulaştı. Kocatürk Okulları'nı daha yakından tanıyın.
-          </p>
+    <section className={styles.heroSection}>
+      <div className="wrap">
+        <Eyebrow>Kurumsal</Eyebrow>
+        <h1 className={styles.heroTitle}>
+          1998'den bugüne
+          <br />
+          <em>Ege'nin eğitim omurgası.</em>
+        </h1>
+        <p className={styles.heroDesc}>
+          Manisa Turgutlu'da 52 kişiyle başlayan bu yolculuk, bugün dört ilçede beş kampüs ve
+          4.000'den fazla öğrenciye ulaştı. Kocatürk Okulları'nı daha yakından tanıyın.
+        </p>
 
-          <div className={styles.hubGrid}>
-            {HUB_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className={styles.hubCard}>
-                <i className={`${link.icon} ${styles.hubCardIcon}`} aria-hidden="true" />
-                <p className={styles.hubCardTitle}>{link.title}</p>
-                <p className={styles.hubCardDesc}>{link.desc}</p>
-                <i className={`bx bx-right-arrow-alt ${styles.hubCardArrow}`} aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
+        <div className={styles.hubGrid}>
+          {HUB_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className={styles.hubCard}>
+              <i className={`${link.icon} ${styles.hubCardIcon}`} aria-hidden="true" />
+              <p className={styles.hubCardTitle}>{link.title}</p>
+              <p className={styles.hubCardDesc}>{link.desc}</p>
+              <i className={`bx bx-right-arrow-alt ${styles.hubCardArrow}`} aria-hidden="true" />
+            </Link>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
