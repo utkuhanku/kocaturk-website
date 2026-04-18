@@ -6,7 +6,7 @@
  *
  * Bölümler:
  * 1. Hero: dark-section, büyük başlık + ✈ ikonu + PhotoSlot
- * 2. USP bandı: 3 NumberCell
+ * 2. USP bandı: 3 NumberCell (2 simülatör · 1 bölgede · 3 kariyer)
  * 3. Müfredat: kart grid
  * 4. Mezun yolları: 3 kariyer kartı
  * 5. Başvuru kriterleri: liste
@@ -23,9 +23,10 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import styles from "./havacilik.module.css";
 
 export const metadata: Metadata = {
-  title: "Havacılık Lisesi | Kocatürk Okulları — Bölgenin Tek Havacılık Lisesi",
+  title:
+    "Havacılık Lisesi | Kocatürk Okulları — KCT Flight Center ile Bölgenin Tek Havacılık Lisesi",
   description:
-    "Gaziemir kampüsünde, TÜRKKUŞU ve THY iş birliğiyle şekillenen müfredat. Pilot, havacılık mühendisi ve kabin amiri yetiştiren bölgenin tek havacılık lisesi.",
+    "Gaziemir kampüsünde, KCT Flight Center Boeing 737 ve F-16 simülatörleriyle uygulamalı eğitim. Pilot, havacılık mühendisi ve kabin görevlisi yetiştiren bölgenin tek havacılık lisesi.",
 };
 
 const MUSFREDAT_KARTLARI = [
@@ -43,19 +44,19 @@ const MUSFREDAT_KARTLARI = [
     icon: "bx bx-joystick",
     title: "Simülatör Eğitimi",
     items: [
-      "Uçuş simülatörü uygulamaları",
-      "Acil durum prosedürleri",
-      "Kalkış ve iniş manevraları",
-      "İlet navigasyon senaryoları",
+      "Boeing 737 tam kokpit simülatörü",
+      "F-16 savaş uçağı simülatörü",
+      "Acil durum prosedürleri senaryoları",
+      "Kalkış, iniş ve manevra uygulamaları",
     ],
   },
   {
     icon: "bx bx-time",
     title: "Uçuş Saatleri",
     items: [
-      "TÜRKKUŞU tesislerinde gözlem uçuşları",
-      "Tanıtım uçuşu programı",
-      "Glider ve hafif uçak tanıma",
+      "KCT Flight Center tanıtım uçuşları",
+      "Glider ve hafif uçak gözlem programı",
+      "Gerçek kokpit deneyimi",
       "Sertifikasyon süreçleri hakkında bilgilendirme",
     ],
   },
@@ -63,10 +64,10 @@ const MUSFREDAT_KARTLARI = [
     icon: "bx bx-briefcase",
     title: "Staj ve Saha",
     items: [
-      "THY bağlantılı gözlem stajı",
       "Havalimanı operasyonları ziyareti",
       "Hava trafik kontrol merkezi tanıtımı",
       "Teknik bakım atölyesi gözlemi",
+      "Endüstri profesyonelleriyle buluşmalar",
     ],
   },
 ];
@@ -75,7 +76,7 @@ const MEZUN_YOLLARI = [
   {
     icon: "bx bx-plane-land",
     title: "Pilot",
-    desc: "Ticari pilot lisansına (CPL) giden yolda güçlü bir teorik temel. YKS sonrası havacılık ön lisans ve lisans programlarına hazırlık. SHGM onaylı içeriklerle başlangıç eğitimi.",
+    desc: "Ticari pilot lisansına (CPL) giden yolda güçlü bir teorik temel. YKS sonrası havacılık ön lisans ve lisans programlarına hazırlık. KCT Flight Center simülatör saatleriyle gerçek kokpit deneyimi.",
   },
   {
     icon: "bx bx-cog",
@@ -85,7 +86,7 @@ const MEZUN_YOLLARI = [
   {
     icon: "bx bx-user-voice",
     title: "Kabin Görevlisi",
-    desc: "Havacılık terminolojisi, yolcu iletişimi ve hizmet protokolleri. İngilizce dil eğitimine ek destek. THY ve diğer havayollarına doğrudan başvuru bilgilendirmesi.",
+    desc: "Havacılık terminolojisi, yolcu iletişimi ve hizmet protokolleri. İngilizce dil eğitimine ek destek. Uluslararası havayollarına doğrudan başvuru için rehberlik ve tanıtım programları.",
   },
 ];
 
@@ -106,7 +107,7 @@ export default function HavacılikLisesiPage() {
         <div className="wrap">
           <div className={styles.heroInner}>
             <div className={styles.heroContent}>
-              <Eyebrow variant="light">Gaziemir Kampüsü · İzmir</Eyebrow>
+              <Eyebrow variant="light">Gaziemir Kampüsü · KCT Flight Center</Eyebrow>
               <div className={styles.heroIcon} aria-hidden="true">
                 ✈
               </div>
@@ -116,8 +117,8 @@ export default function HavacılikLisesiPage() {
                 <em>Havacılık Lisesi</em>
               </h1>
               <p className={styles.heroDesc}>
-                TÜRKKUŞU Türk Hava Kurumu ve Türk Hava Yolları iş birliğiyle şekillenen müfredat.
-                Teorik ders, simülatör eğitimi ve saha stajı ile pilot, havacılık mühendisi veya
+                KCT Flight Center — İzmir'in ilk ve tek uçuş simülatör merkezi. Boeing 737 ve F-16
+                simülatörleriyle teorik bilgiden uygulamalı eğitime. Pilot, havacılık mühendisi veya
                 kabin görevlisi olmaya giden en doğrudan yol.
               </p>
               <div className={styles.heroCtas}>
@@ -135,8 +136,8 @@ export default function HavacılikLisesiPage() {
                 aspectRatio="4:3"
                 category="HERO"
                 type="photo"
-                title="Havacılık Lisesi"
-                description="Havacılık Lisesi hero görseli — simülatör veya uçak önü"
+                title="KCT Flight Center"
+                description="KCT Flight Center — Boeing 737 simülatörü kokpiti"
               />
             </div>
           </div>
@@ -148,16 +149,16 @@ export default function HavacılikLisesiPage() {
         <div className="wrap">
           <div className={styles.uspGrid}>
             <NumberCell
-              number={1}
-              label="BÖLGEDE"
-              sublabel="Tek Havacılık Lisesi"
+              number={2}
+              label="SİMÜLATÖR"
+              sublabel="Boeing 737 · F-16"
               variant="light"
               size="md"
             />
             <NumberCell
-              number={2}
-              label="KURUM İŞ BİRLİĞİ"
-              sublabel="TÜRKKUŞU · THY"
+              number={1}
+              label="BÖLGEDE"
+              sublabel="Tek Havacılık Lisesi"
               variant="light"
               size="md"
             />
@@ -245,7 +246,7 @@ export default function HavacılikLisesiPage() {
                 category="CAMPUS"
                 type="photo"
                 title="Başvuru"
-                description="Havacılık Lisesi başvuru görseli"
+                description="Havacılık Lisesi başvuru görseli — KCT Flight Center girişi"
               />
             </div>
           </div>
@@ -255,7 +256,7 @@ export default function HavacılikLisesiPage() {
       {/* Galeri */}
       <section className={styles.galeriSection}>
         <div className="wrap">
-          <Eyebrow>Kampüs ve Tesis</Eyebrow>
+          <Eyebrow>KCT Flight Center</Eyebrow>
           <h2 className={styles.sectionTitle}>Yerinde gör</h2>
           <div className={styles.galeriGrid}>
             <PhotoSlot
@@ -263,32 +264,32 @@ export default function HavacılikLisesiPage() {
               aspectRatio="4:3"
               category="GALLERY"
               type="photo"
-              title="Simülatör"
-              description="Uçuş simülatörü odası"
+              title="Boeing 737 Simülatörü"
+              description="KCT Flight Center Boeing 737 tam kokpit simülatörü"
             />
             <PhotoSlot
               slotId="havacilik-gal-2"
               aspectRatio="4:3"
               category="GALLERY"
               type="photo"
-              title="Sınıf"
-              description="Havacılık teorisi sınıfı"
+              title="F-16 Simülatörü"
+              description="KCT Flight Center F-16 simülatörü"
             />
             <PhotoSlot
               slotId="havacilik-gal-3"
               aspectRatio="4:3"
               category="GALLERY"
               type="photo"
-              title="Saha"
-              description="TÜRKKUŞU saha ziyareti"
+              title="Teorik Ders"
+              description="Havacılık teorisi sınıfı — meteoroloji ve navigasyon"
             />
             <PhotoSlot
               slotId="havacilik-gal-4"
               aspectRatio="4:3"
               category="GALLERY"
               type="photo"
-              title="Tören"
-              description="Mezuniyet töreni"
+              title="Mezuniyet"
+              description="Havacılık Lisesi mezuniyet töreni"
             />
           </div>
         </div>
