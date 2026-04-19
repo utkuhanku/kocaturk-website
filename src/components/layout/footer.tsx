@@ -173,6 +173,12 @@ export function SiteFooter() {
           <div>
             <span className={styles.colTitle}>Bağlantılar</span>
             <nav className={styles.links} aria-label="Dış bağlantılar">
+              <Link href="/haberler" className={styles.footerLink}>
+                Haberler
+              </Link>
+              <Link href="/basarilarimiz" className={styles.footerLink}>
+                Başarılarımız
+              </Link>
               <a
                 href="https://meb.gov.tr"
                 className={styles.footerLink}
@@ -225,6 +231,9 @@ export function SiteFooter() {
             </Link>
             <Link href="/cerez-politikasi" className={styles.legalLink}>
               Çerez Politikası
+            </Link>
+            <Link href="/gizlilik-politikasi" className={styles.legalLink}>
+              Gizlilik Politikası
             </Link>
             <Link href="/sitemap.xml" className={styles.legalLink}>
               Sitemap
