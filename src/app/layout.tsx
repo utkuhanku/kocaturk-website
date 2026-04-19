@@ -49,8 +49,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR",
     siteName: "Kocatürk Okulları",
+    url: "https://kocaturk.k12.tr",
     title: "Kocatürk Okulları — Köklerimiz burada, ufkumuz dünyada.",
     description: `1998\u2019den bu yana Manisa Turgutlu\u2019dan dünyaya uzanan köklü eğitim geleneği.`,
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Kocatürk Okulları",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kocatürk Okulları",
+    description: "Ege'nin eğitim omurgası — 1998'den bu yana",
+    images: ["/og-default.png"],
   },
   alternates: {
     canonical: "/",
