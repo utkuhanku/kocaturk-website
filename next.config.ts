@@ -10,19 +10,31 @@ import type { NextConfig } from "next";
  */
 
 const nextConfig: NextConfig = {
+  /* ─── Core ───────────────────────────────────────────────────── */
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
+
   /* ─── Turbopack ──────────────────────────────────────────────── */
   turbopack: {
     root: __dirname,
   },
 
-  /* ─── Image Domains ─────────────────────────────────────────── */
+  /* ─── Images ─────────────────────────────────────────────────── */
   images: {
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
     ],
+  },
+
+  /* ─── Experimental ───────────────────────────────────────────── */
+  experimental: {
+    optimizePackageImports: ["@react-email/components"],
   },
 
   /* ─── Security Headers ──────────────────────────────────────── */

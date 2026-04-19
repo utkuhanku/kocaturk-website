@@ -58,7 +58,7 @@ Sanity CMS entegrasyonu tamamlandığında ve gerçek görseller/metinler hazır
 | 57 | `/kurumsal/yonetim` | Kampüs müdürleri adları + fotoğraflar | ⏳ |
 | 58 | `/kurumsal/akreditasyonlar` | Akreditasyon belgeleri + tarihler | ⏳ |
 
-## Sanity Entegrasyonu Bekleyen (Faz 7)
+## Sanity Entegrasyonu Bekleyen (Faz 8)
 
 | # | Alan | Mevcut Durum | Hedef |
 |---|------|-------------|-------|
@@ -76,10 +76,25 @@ Sanity CMS entegrasyonu tamamlandığında ve gerçek görseller/metinler hazır
 |---|------|-------|
 | 71 | Resend API key | `.env.local`'e eklenmeli |
 | 72 | `EMAIL_TO` env var | Hedef e-posta adresi |
-| 73 | Rate limiting | In-memory Map (Faz 7'de Vercel KV) |
+| 73 | Rate limiting | In-memory Map (Faz 8'de Vercel KV'ye geçilecek) |
+
+## Deployment & Altyapı (Faz 7 — Yeni)
+
+| # | Alan | Açıklama | Durum |
+|---|------|----------|-------|
+| 76 | `public/og-default.png` | 1200×630 sosyal medya OG kapak görseli — şu an logo kopyası | ⏳ |
+| 77 | `public/og-default.svg` | OG görsel SVG template — gerçek marka görseli bekleniyor | ⏳ |
+| 78 | Resend DKIM/SPF | kocaturk.k12.tr için DNS kayıtları eklenmeli (docs/VERCEL-SETUP.md) | ⏳ |
+| 79 | Vercel env variables | Production/Preview için set edilmeli (docs/VERCEL-SETUP.md) | ⏳ |
+| 80 | Google Search Console | Site eklenmeli + sitemap.xml submit edilmeli | ⏳ |
+| 81 | Analytics | Henüz karar verilmedi (Plausible / Vercel Analytics / GA4) | ⏳ |
+| 82 | Custom domain | kocaturk.k12.tr → Vercel DNS bağlantısı | ⏳ |
+| 83 | Mapbox token kısıtlaması | Production token allowed URLs ile kısıtlanmalı | ⏳ |
+| 84 | Lighthouse CI token | `LHCI_GITHUB_APP_TOKEN` secret GitHub'a eklenmeli | ⏳ |
+| 85 | `/kampus-yasami` içeriği | Kulüp listesi, etkinlik takvimi, galeri — Sanity Faz 8'de | ⏳ |
 
 ---
 
-**Toplam aktif placeholder:** ~25 ContentNote + ~38 PhotoSlot = ~63
+**Toplam aktif placeholder:** ~25 ContentNote + ~38 PhotoSlot + ~10 Deployment = ~73
 
-Lansman öncesi hedef: Tüm ContentNote sıfır, kritik PhotoSlot'lar (hero, kampüs, öğrenci) doldurulmuş.
+Lansman öncesi hedef: Tüm ContentNote sıfır, kritik PhotoSlot'lar (hero, kampüs, öğrenci) doldurulmuş, deployment checklist tamamlanmış.

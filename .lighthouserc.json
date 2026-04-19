@@ -1,0 +1,28 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:3000",
+        "http://localhost:3000/kampusler",
+        "http://localhost:3000/kampusler/turgutlu",
+        "http://localhost:3000/egitim",
+        "http://localhost:3000/egitim/havacilik-lisesi",
+        "http://localhost:3000/kayit/on-kayit",
+        "http://localhost:3000/haberler",
+        "http://localhost:3000/iletisim"
+      ],
+      "numberOfRuns": 1,
+      "startServerCommand": "npm start",
+      "startServerReadyPattern": "Ready",
+      "startServerReadyTimeout": 30000
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.85 }],
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["error", { "minScore": 0.95 }]
+      }
+    }
+  }
+}

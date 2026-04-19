@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /kayit/on-kayit/tesekkurler
+
+Sitemap: https://kocaturk.k12.tr/sitemap.xml
